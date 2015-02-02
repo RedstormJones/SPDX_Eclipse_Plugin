@@ -21,4 +21,4 @@ Installation
 Contributors
 ------------
 
-GET /repos/:owner/:repo/contributors
+Tyler Filkins ( [TCF-30](https://github.com/TCF-30) )
