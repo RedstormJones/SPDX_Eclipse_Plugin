@@ -13,7 +13,7 @@ Copyright
 ---------
 
  - Documentation: Creative Commons Attribution-ShareAlike 3.0 United States (CC BY-SA-3.0)
-    - More information is available at [Creative Commons](https://creativecommons.org/licenses/by-sa/3.0/us/).
+    - More information about this license is available at [Creative Commons](https://creativecommons.org/licenses/by-sa/3.0/us/).
 
 Copyright © 2015 University of Nebraska at Omaha
 
