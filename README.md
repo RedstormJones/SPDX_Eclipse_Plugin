@@ -15,7 +15,7 @@ License
 Copyright
 ---------
 
-Copyright © 2014 University of Nebraska at Omaha
+Copyright © 2015 University of Nebraska at Omaha
 
 System Specifications
 ---------
