@@ -1,5 +1,5 @@
 SPDX Eclipse Plugin
-====
+===================
 
 System Overview
 --------------------------
