@@ -9,7 +9,7 @@ Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/) an
 License
 -------
  - Documentation: [Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/)
-  -  [Localized License File]()
+  -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/master/DocumentationLicense)
  - Source Code: 
   -  More Information:
 
