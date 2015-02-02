@@ -30,6 +30,12 @@ Contributors
 
 Current developers for the SPDX Eclipse Plugin include:
 
-- Tyler Filkins ([TCF-30](https://github.com/TCF-30)) - Project Manager, Systems Architect, Developer
-- Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz)) - Systems Architect, Developer
-- Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP)) - Developer
+- Tyler Filkins ([TCF-30](https://github.com/TCF-30))
+ - Project Manager
+ - Systems Architect
+ - Developer
+- Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz)) 
+ - Systems Architect
+ - Developer
+- Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
+ - Developer
