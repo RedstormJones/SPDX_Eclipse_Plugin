@@ -28,7 +28,7 @@ Installation
 Contributors
 ------------
 
-The developers and their positions for the SPDX Eclipse Plugin are as follows:
+The developers and their positions are as follows:
 
 - Tyler Filkins ([TCF-30](https://github.com/TCF-30))
  - Project Manager
