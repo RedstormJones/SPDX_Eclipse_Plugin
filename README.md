@@ -16,11 +16,8 @@ Copyright
 
 Copyright © 2015 University of Nebraska at Omaha
 
-System Specifications
+Documentation
 ---------------------
-
-Installation
-------------
 
 Contributors
 ------------
