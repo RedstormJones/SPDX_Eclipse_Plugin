@@ -8,8 +8,8 @@ Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/) an
 
 License
 -------
- - Documentation: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
-  -  More Information: https://creativecommons.org/licenses/by-sa/3.0/
+ - Documentation: [Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/)
+  -  [Localized License File]()
  - Source Code: 
   -  More Information:
 
