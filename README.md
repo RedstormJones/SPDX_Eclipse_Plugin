@@ -23,4 +23,4 @@ Contributors
 
 - Tyler Filkins ([TCF-30](https://github.com/TCF-30))
 - Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz))
-- Jonathan Freire e Silva ([ryanbeaz](https://github.com/jonathanPHP))
+- Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
