@@ -20,3 +20,5 @@ Installation
 
 Contributors
 ------------
+
+GET /repos/:owner/:repo/contributors
