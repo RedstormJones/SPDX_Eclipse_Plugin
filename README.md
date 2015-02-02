@@ -12,10 +12,8 @@ Plugin Versions
 Licence Information
 -------------------
  - Documentation: Creative Commons Attribution-ShareAlike 3.0 United States (CC BY-SA-3.0)
-  - See [Creative Commons](https://creativecommons.org/licenses/by-sa/3.0/us/).
  - Source Code: 
-  - See [Creative Commons](https://creativecommons.org/licenses/by-sa/3.0/us/).
- 
+
 Copyright
 ---------
 
