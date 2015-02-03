@@ -4,9 +4,9 @@ SPDX Eclipse Plugin
 System Overview
 ---------------
 
-Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/) and Associate Professor, [Dr. Matt Germonprez] (http://www.unomaha.edu/college-of-information-science-and-technology/about/faculty-staff/matt-germonprez.php), a new plugin is being developed for the [Eclipse](https://eclipse.org/home/index.php) integrated development environment.  
+Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/) and Associate Professor, [Dr. Matt Germonprez] (http://www.unomaha.edu/college-of-information-science-and-technology/about/faculty-staff/matt-germonprez.php), a new plugin is being developed for the [Eclipse](https://eclipse.org/home/index.php) integrated development environment.
 
-Plugin group will develop a plug-in for the Eclipse IDE which will maintain an SPDX file for the project being developed.  
+Building on existing functionality offered by the [FOSSology+SPDX](https://spdx.org/tools/community/fossologyspdx) application, this Eclipse plugin will allow developers to easily view licensing and copyright information of selected software files, which is reported by the FOSSology  from maintain SPDX files.  
 
 License
 -------
