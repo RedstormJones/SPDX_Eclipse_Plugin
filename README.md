@@ -23,7 +23,7 @@ Copyright © 2015 University of Nebraska at Omaha
 Documentation
 ---------------------
 
-As the SPDX Eclipse Plugin becomes more mature, more features and functionality will be developed. To be kept up to date with current developments and other supplemental documentation, please visit the [wiki](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki).
+As the SPDX Eclipse Plugin becomes more mature, more features and functionality will be developed. To be kept up to date with current developments please visit the [issue tracker](https://github.com/TCF-30/SPDX_Eclipse_Plugin/issues). For other supplemental documentation, please visit the  [wiki](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki).
 
 Contributors
 ------------
