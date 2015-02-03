@@ -6,7 +6,7 @@ System Overview
 
 Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/) and Associate Professor, [Dr. Matt Germonprez] (http://www.unomaha.edu/college-of-information-science-and-technology/about/faculty-staff/matt-germonprez.php), a new plugin is being developed for the [Eclipse](https://eclipse.org/home/index.php) integrated development environment.
 
-Building on existing functionality offered by the [FOSSology+SPDX](https://spdx.org/tools/community/fossologyspdx) application, this Eclipse plugin will allow developers to easily view licensing and copyright information of selected software files, which is reported by the FOSSology  from maintain SPDX files.  
+Building on existing functionality offered by the [FOSSology+SPDX](https://spdx.org/tools/community/fossologyspdx) application, this Eclipse plugin will first allow developers to easily view licensing and copyright information of selected software files. Developers may then use the plugin to either add licensing and copyright information or to generate SPDX files which are standardized documents that compile licensing and copyright information, for appropriate software files.  
 
 License
 -------
