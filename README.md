@@ -41,6 +41,7 @@ The developers for the SPDX Eclipse Plugin and their project roles are as follow
 - Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz)) 
  - Project Manager
  - Developer
+ - User Experience Designer
 - Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
  - Software Quality Analyst
  - Developer
