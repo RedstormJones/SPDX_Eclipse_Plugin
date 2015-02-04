@@ -23,7 +23,7 @@ Copyright © 2015 University of Nebraska at Omaha
 Version
 -------
 
-Once the SPDX Eclipse Plugin has successfully released version 1.0, versioning information will be added to this section.
+Once the SPDX Eclipse Plugin version 1.0 has been successfully released, versioning information such as a description of the new features and bug fixes will be displayed in this section.
 
 Documentation
 -------------
