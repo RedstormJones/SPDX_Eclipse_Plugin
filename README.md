@@ -45,4 +45,6 @@ The developers for the SPDX Eclipse Plugin and their project roles are as follow
 - Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
  - Software Quality Analyst
  - Developer
+ 
+To become a contributer to the SPDX Eclipse Plugin, please see our [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) Wiki page.
 
