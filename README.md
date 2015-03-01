@@ -37,14 +37,15 @@ The developers for the SPDX Eclipse Plugin and their project roles are as follow
 
 - Tyler Filkins ([TCF-30](https://github.com/TCF-30))
  - Systems Architect
- - Developer
+ - Application Developer
+ - Database Administrator
 - Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz)) 
  - Project Manager
- - Developer
+ - Application Developer
  - User Experience Designer
 - Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
  - Software Quality Analyst
- - Developer
+ - Application Developer
  
 To become a contributer to the SPDX Eclipse Plugin, please see our [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) wiki page.
 
