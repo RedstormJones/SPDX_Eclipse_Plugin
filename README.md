@@ -33,7 +33,7 @@ As the SPDX Eclipse Plugin becomes more mature, more features and functionality 
 Contributors
 ------------
 
-The developers for the SPDX Eclipse Plugin and their project roles are as follows:
+The contributors for the SPDX Eclipse Plugin and their roles for the project are as follows:
 
 - Tyler Filkins ([TCF-30](https://github.com/TCF-30))
  - Systems Architect
