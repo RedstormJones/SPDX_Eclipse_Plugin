@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;SPDX_Eclipse_Plugin&apos;&#x0A;- Original project: &apos;SPDX_Eclipse_Plugin&apos;&#x0A;- Original element: &apos;SPDX_Eclipse_Plugin/src/spdx_eclipse_plugin.handlers&apos;" description="Delete element" element1="/src&lt;spdx_eclipse_plugin.handlers" element2="/src&lt;spdx_eclipse_plugin" elements="2" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1425343437605" subPackages="false" version="1.0"/>
-</session>
