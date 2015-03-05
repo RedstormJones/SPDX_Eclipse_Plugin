@@ -51,7 +51,7 @@
                id="SPDX_Eclipse_Plugin.toolbars.sampleToolbar">
             <command
                   commandId="SPDX_Eclipse_Plugin.commands.sampleCommand"
-                  icon="icons/sample.gif"
+                  icon="icons/icon.jpg"
                   tooltip="Say hello world"
                   id="SPDX_Eclipse_Plugin.toolbars.sampleCommand">
             </command>
