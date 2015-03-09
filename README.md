@@ -33,7 +33,7 @@ As the SPDX Eclipse Plugin becomes more mature, more features and functionality 
 Administrators
 ------------
 
-The Administrators for the SPDX Eclipse Plugin and their roles for the project are as follows:
+The SPDX Eclipse Plugin administrators and their specific project roles are as follows:
 
 - Tyler Filkins ([TCF-30](https://github.com/TCF-30))
  - Systems Architect
@@ -49,5 +49,5 @@ The Administrators for the SPDX Eclipse Plugin and their roles for the project a
 
 To see project specific roles for each administrator, please see the [Roles](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Roles) wiki page.
  
-To become a administrator to the SPDX Eclipse Plugin, please see our [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) wiki page.
+To become a administrator for the SPDX Eclipse Plugin, please see the [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) wiki page.
 
