@@ -25,11 +25,4 @@
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>LICENSE</name>
-			<type>1</type>
-			<location>/media/psf/Home/Desktop/LICENSE</location>
-		</link>
-	</linkedResources>
 </projectDescription>
