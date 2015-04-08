@@ -8,7 +8,7 @@
             objectClass="org.eclipse.core.resources.IFile"
             id="org.spdx.spdxeclipse.contribution1">
          <menu
-               label="New Submenu"
+               label="New Sub-menu"
                path="additions"
                id="org.spdx.spdxeclipse.menu1">
             <separator
