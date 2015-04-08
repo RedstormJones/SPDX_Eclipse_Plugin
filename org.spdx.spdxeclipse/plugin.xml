@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
+
 <plugin>
-
    <extension
-         point="org.eclipse.ui.commands">
-      <objectContribution
-            objectClass="org.eclipse.core.resources.IFile"
-            id="org.spdx.spdxeclipse.contribution1">
-         <menu
-               label="New Sub-menu"
-               path="additions"
-               id="org.spdx.spdxeclipse.menu1">
-            <separator
-                  name="group1">
-            </separator>
-         </menu>
-         <action
-               label="New Action"
-               class="org.spdx.spdxeclipse.popup.actions.NewAction"
-               menubarPath="org.spdx.spdxeclipse.menu1/group1"
-               enablesFor="1"
-               id="org.spdx.spdxeclipse.newAction">
-         </action>
-      </objectContribution>
-   </extension>
-
+         point="org.eclipse.ui.popupMenus">
+   </extension>on>
 </plugin>
