@@ -3,7 +3,7 @@
 <plugin>
 
    <extension
-         point="org.eclipse.ui.popupMenus">
+         point="org.eclipse.ui.commands">
       <objectContribution
             objectClass="org.eclipse.core.resources.IFile"
             id="org.spdx.spdxeclipse.contribution1">
