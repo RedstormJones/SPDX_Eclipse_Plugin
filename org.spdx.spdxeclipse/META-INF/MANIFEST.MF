@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SPDX Eclipse Plugin
+Bundle-SymbolicName: org.spdx.spdxeclipse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.spdx.spdxeclipse.Activator
+Bundle-Vendor: https://spdx.org/
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
