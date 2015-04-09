@@ -4,9 +4,7 @@ SPDX Eclipse Plugin
 System Overview
 ---------------
 
-Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/), a new plugin is being developed for the [Eclipse](https://eclipse.org/home/index.php) integrated development environment.
-
-Building on existing functionality offered by the [FOSSology+SPDX](https://spdx.org/tools/community/fossologyspdx) application, this Eclipse plugin will first allow developers to easily view licensing and copyright information of selected software files (FOSSology functionality). Developers may then use the plugin to either add licensing and copyright information or to generate SPDX files (FOSSology and SPDX functionality) which are standardized documents that compile licensing and copyright information, for appropriate software files.  
+Partnered with the [University of Nebraska at Omaha](http://www.unomaha.edu/), an [Eclipse](https://eclipse.org/home/index.php) plugin is being developed which will allow developers to easily view licensing and copyright information of individual software files or projects using an [SPDX](https://spdx.org/) document maintained by the plugin.  Building on functionality from the [FOSSology+SPDX](https://spdx.org/tools/community/fossologyspdx) and [DoSOCS](https://github.com/socs-dev-env/DoSOCS) applications, this plugin will also give developers the ability to add licensing and copyright information to software files they developed.
 
 License
 -------
@@ -27,6 +25,8 @@ The SPDX Eclipse Plugin is currently [pre-alpha](https://en.wikipedia.org/wiki/S
 
 Installation
 -------------
+
+To install the SPDX Eclipse Plugin please visit the plugin installation wiki page.
 
 Documentation
 -------------
