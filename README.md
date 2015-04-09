@@ -30,24 +30,22 @@ Documentation
 
 As the SPDX Eclipse Plugin becomes more mature, more features and functionality will be developed. To be kept up to date with current developments please visit the SPDX Eclipse Plugin [issue tracker](https://github.com/TCF-30/SPDX_Eclipse_Plugin/issues).  For other supplemental documentation, please visit the  [wiki](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki).
 
+Installation
+-------------
+
+
 Administrators
 ------------
 
-The SPDX Eclipse Plugin administrators and their specific project roles are as follows:
+The SPDX Eclipse Plugin project administrators are as follows:
 
 - Tyler Filkins ([TCF-30](https://github.com/TCF-30))
- - Systems Architect
- - Application Developer
- - Database Administrator
 - Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz)) 
- - Project Manager
- - Application Developer
- - User Experience Designer
 - Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
- - Software Quality Analyst
- - Application Developer
 
 To see project specific roles for each administrator, please see the [Roles](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Roles) wiki page.
- 
-To become a administrator for the SPDX Eclipse Plugin, please see the [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) wiki page.
 
+BECOME A CONTRIBUTOR
+------------------
+
+To become a contributor for the SPDX Eclipse Plugin, please see the [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) wiki page.
