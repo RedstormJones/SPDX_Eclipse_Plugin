@@ -25,14 +25,13 @@ Version
 
 The SPDX Eclipse Plugin is currently [pre-alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle).  Version 1.0 is expected to be released before Q2 of 2015.  Once version 1.0 has been released, information regarding new features and bug fixes for that release will be outlined in this section.
 
+Installation
+-------------
+
 Documentation
 -------------
 
 As the SPDX Eclipse Plugin becomes more mature, more features and functionality will be developed. To be kept up to date with current developments please visit the SPDX Eclipse Plugin [issue tracker](https://github.com/TCF-30/SPDX_Eclipse_Plugin/issues).  For other supplemental documentation, please visit the  [wiki](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki).
-
-Installation
--------------
-
 
 Administrators
 ------------
