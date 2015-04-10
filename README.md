@@ -26,7 +26,7 @@ The SPDX Eclipse Plugin is currently [pre-alpha](https://en.wikipedia.org/wiki/S
 Installation
 -------------
 
-To install the SPDX Eclipse Plugin please visit the plugin installation wiki page.
+To correctly setup the SPDX Eclipse Plugin in your Eclipse instance, please visit the [Plugin Setup Guide](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Plugin-Setup-Guide) wiki page.
 
 Documentation
 -------------
@@ -47,4 +47,4 @@ To see project specific roles for each administrator, please see the [Roles](htt
 BECOME A CONTRIBUTOR
 ------------------
 
-To become a contributor for the SPDX Eclipse Plugin, please see the [How to Contribute](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/How-To-Contribute) wiki page.
+To become a contributor for the SPDX Eclipse Plugin or to learn more, please see the [Project & Community](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Project-&-Community) wiki page.
