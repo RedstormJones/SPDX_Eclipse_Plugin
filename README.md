@@ -21,7 +21,7 @@ Copyright © 2015 University of Nebraska at Omaha
 Version
 -------
 
-The SPDX Eclipse Plugin is currently [pre-alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle).  Version 1.0 is expected to be released before Q2 of 2015.  Once version 1.0 has been released, information regarding new features and bug fixes for that release will be outlined in this section.
+The SPDX Eclipse Plugin is currently [pre-alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle).  Version 1.0 is expected to be released April 17th, 2015.  Information regarding the features to be included in version 1.0 will be released soon.
 
 Installation
 -------------
