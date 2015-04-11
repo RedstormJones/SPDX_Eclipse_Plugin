@@ -53,4 +53,10 @@ ____ I am signing on behalf of my employer or a legal entity and I have the actu
 |&nbsp;&nbsp;**Mailing Address***&nbsp;&nbsp;||
 |&nbsp;&nbsp;**Email Address***&nbsp;&nbsp;||
 
+<br><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 
+Content used in this document was originally used in the document located at the following URL:
+
+[http://www.oracle.com/technetwork/oca-405177.pdf](http://www.oracle.com/technetwork/oca-405177.pdf)
+
+Content was altered from the original to meet the needs and requirements of the SPDX Eclipse Plugin.
