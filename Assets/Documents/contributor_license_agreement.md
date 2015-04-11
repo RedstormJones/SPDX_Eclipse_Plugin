@@ -32,7 +32,7 @@ This Contributor License Agreement (“CLI”) applies to any contribution that 
 
 <p>5. You covenant, represent, warrant and agree that:</p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• each contribution that you submit is and shall be an original work of authorship and you can legally grant the rights set out in this CLI;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• each contribution that you submit is and shall be an original work of authorship and you can legally grant the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rights set out in this CLI;
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• to the best of your knowledge, each contribution will not violate any third party's copyrights, trademarks, patents, or other intellectual property rights; and
 
