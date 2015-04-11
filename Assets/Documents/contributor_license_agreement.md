@@ -28,4 +28,6 @@ This Contributor License Agreement (“CLI”) applies to any contribution that 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• at our option, to sublicense these same rights to third parties through multiple levels of sublicensees or other &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;licensing arrangements.
 
+<p>4. Except as set out above, you keep all right, title, and interest in your contribution. The rights that you grant to us under these terms are effective on the date you first submitted a contribution to us, even if your submission took place before the date you sign these terms. Any contribution we make available under any license will also be made available under a suitable FSF (Free Software Foundation) or OSI (Open Source Initiative) approved license.</p>
 
+<p>5. You covenant, represent, warrant and agree that:</p>
