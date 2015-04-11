@@ -27,3 +27,5 @@ This Contributor License Agreement (“CLI”) applies to any contribution that 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• make, have made, use, sell, offer to sell, import, and otherwise transfer your contribution in whole or in part, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alone or in combination with or included in any product, work or materials arising out of the project to which your &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contribution was submitted, and
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• at our option, to sublicense these same rights to third parties through multiple levels of sublicensees or other &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;licensing arrangements.
+
+
