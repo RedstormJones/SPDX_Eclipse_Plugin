@@ -26,7 +26,7 @@ This Contributor License Agreement (“CLI”) applies to any contribution that 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• make, have made, use, sell, offer to sell, import, and otherwise transfer your contribution in whole or in part, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alone or in combination with or included in any product, work or materials arising out of the project to which your &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contribution was submitted, and
 
-<p>4. Except as set out above, you keep all right, title, and interest in your contribution. The rights that you grant to us under these terms are effective on the date you first submitted a contribution to us, even if your submission took place before the date you sign these terms. All contributions must be licenced under the [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0) license.
+<p>4. Except as set out above, you keep all right, title, and interest in your contribution. The rights that you grant to us under these terms are effective on the date you first submitted a contribution to us, even if your submission took place before the date you sign these terms. All contributions must be licenced under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a> license.
 
 <p>5. You covenant, represent, warrant and agree that:</p>
 
