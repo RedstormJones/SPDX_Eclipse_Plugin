@@ -31,3 +31,9 @@ This Contributor License Agreement (“CLI”) applies to any contribution that 
 <p>4. Except as set out above, you keep all right, title, and interest in your contribution. The rights that you grant to us under these terms are effective on the date you first submitted a contribution to us, even if your submission took place before the date you sign these terms. Any contribution we make available under any license will also be made available under a suitable FSF (Free Software Foundation) or OSI (Open Source Initiative) approved license.</p>
 
 <p>5. You covenant, represent, warrant and agree that:</p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• each contribution that you submit is and shall be an original work of authorship and you can legally grant the rights set out in this CLI;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• to the best of your knowledge, each contribution will not violate any third party's copyrights, trademarks, patents, or other intellectual property rights; and
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• each contribution shall be in compliance with U.S. export control laws and other applicable export and import laws. You agree to notify us if you become aware of any circumstance which would make any of the foregoing representations inaccurate in any respect. The SPDX Eclipse Plugin project administrators may publicly disclose your participation in the project, including the fact that you have signed the CLI.
