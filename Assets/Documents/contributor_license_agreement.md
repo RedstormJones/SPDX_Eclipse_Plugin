@@ -37,3 +37,11 @@ This Contributor License Agreement (“CLI”) applies to any contribution that 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• to the best of your knowledge, each contribution will not violate any third party's copyrights, trademarks, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patents, or other intellectual property rights; and
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• each contribution shall be in compliance with U.S. export control laws and other applicable export and import &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;laws. You agree to notify us if you become aware of any circumstance which would make any of the foregoing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;representations inaccurate in any respect. The SPDX Eclipse Plugin project administrators may publicly disclose &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your participation in the project, including the fact that you have signed the CLI.
+
+<p>6. Please place an “x” on one of the applicable statement below. Please do NOT mark both statements:</p>
+
+____ I am signing on behalf of myself as an individual and no other person or entity, including my employer, has or will have rights with respect my contributions.
+
+____ I am signing on behalf of my employer or a legal entity and I have the actual authority to contractually bind that entity.
+
+<p>7. Please fill out the following form. Any form element containing a * symbol is a required field.</p>
