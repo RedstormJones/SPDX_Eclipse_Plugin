@@ -8,9 +8,9 @@ SPDX Eclipse Plugin
 License
 -------
  - Documentation: [Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)](https://creativecommons.org/licenses/by-sa/3.0/)
-  -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/master/DocumentationLicense)
+  -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/dev/DocumentationLicense)
  - Source Code: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-  -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/master/SourceLicense)
+  -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/dev/SourceLicense)
 
 Copyright
 ---------
