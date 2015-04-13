@@ -11,6 +11,7 @@ SPDX Eclipse Plugin
  - Source Code: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
   -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/dev/SourceLicense)
 <br>
+
 **Copyright:** Copyright © 2015 University of Nebraska at Omaha
 
 Installation
