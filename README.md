@@ -42,7 +42,7 @@ The SPDX Eclipse Plugin project administrators are as follows:
 - Ryan Beasley ([ryanbeaz](https://github.com/ryanbeaz)) 
 - Jonathan Freire e Silva ([jonathanPHP](https://github.com/jonathanPHP))
 
-To see project specific roles for each administrator, please see the [Administrator Roles]([Administrator Roles](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Technical-Documentation/#administrator_roles) wiki page.
+To see project specific roles for each administrator, please see the [Administrator Roles](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Technical-Documentation/#administrator_roles) wiki page.
 
 BECOME A CONTRIBUTOR
 ------------------
