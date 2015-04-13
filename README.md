@@ -52,4 +52,4 @@ To become a contributor for the SPDX Eclipse Plugin or to learn more, please see
 Contact Us
 ------------------
 
-If you have any questions or concerns regarding the SPDX Eclipse Plugin, contact the project administrators @ <a href="mailto:rbeasley@unomaha.edu>rbeasley@unomaha.edu</a>.
+If you have any questions or concerns regarding the SPDX Eclipse Plugin, contact the project administrators at rbeasley@unomaha.edu
