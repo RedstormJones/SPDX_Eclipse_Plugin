@@ -44,12 +44,12 @@ The SPDX Eclipse Plugin project administrators are as follows:
 
 To see project specific roles for each administrator, please see the [Roles](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Roles) wiki page.
 
-BECOME A CONTRIBUTOR
-------------------
-
-To become a contributor for the SPDX Eclipse Plugin or to learn more, please see the [Project & Community](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Project-&-Community) wiki page.
-
 Contact Us
 ------------------
 
 If you have any questions or concerns regarding the SPDX Eclipse Plugin, contact the project administrators at rbeasley@unomaha.edu
+
+BECOME A CONTRIBUTOR
+------------------
+
+To become a contributor for the SPDX Eclipse Plugin or to learn more, please see the [Project & Community](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Project-&-Community) wiki page.
