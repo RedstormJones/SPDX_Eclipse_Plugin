@@ -12,9 +12,10 @@
        		visible="true">
 		</separator>
          	<command
-               commandId="org.spdx.spdxeclipse.command"
-               label="Generate SPDX"
-               style="push">
+                commandId="org.spdx.spdxeclipse.command"
+                icon="Assets/Images/spdx_logo.gif"
+                label="Generate SPDX"
+                style="push">
          	</command>
          <separator
        		name="separator_2"
