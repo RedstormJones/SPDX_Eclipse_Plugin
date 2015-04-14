@@ -14,7 +14,7 @@
          	<command
                commandId="org.spdx.spdxeclipse.command"
                label="Generate SPDX"
-               style="push"
+               style="push">
          	</command>
          <separator
        		name="separator_2"
