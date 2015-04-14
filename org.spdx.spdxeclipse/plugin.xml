@@ -13,7 +13,8 @@
 		</separator>
          	<command
                 commandId="org.spdx.spdxeclipse.command"
-                icon="Assets/Images/spdx_logo.gif"
+                disabledIcon="Assets/Images/spdx_logo.jpg"
+                icon="Assets/Images/spdx_logo.jpg"
                 label="Generate SPDX"
                 style="push">
          	</command>
