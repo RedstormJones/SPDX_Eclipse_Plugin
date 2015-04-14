@@ -3,6 +3,15 @@
 
 <plugin>
    <extension
-         point="org.eclipse.ui.popupMenus">
-   </extension>on>
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <command
+               commandId="org.spdx.spdxeclipse.command"
+               label="Generate SPDX"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
 </plugin>
