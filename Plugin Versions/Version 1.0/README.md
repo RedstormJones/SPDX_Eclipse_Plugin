@@ -13,3 +13,6 @@ SPDX Eclipse Plugin
 <br>
 
 **Copyright:** Copyright © 2015 University of Nebraska at Omaha
+
+**Installation:**
+<br>
