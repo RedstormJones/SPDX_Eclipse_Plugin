@@ -13,8 +13,3 @@ SPDX Eclipse Plugin
 <br>
 
 **Copyright:** Copyright © 2015 University of Nebraska at Omaha
-
-Installation
--------------
-
-To correctly setup the SPDX Eclipse Plugin in your Eclipse instance, please visit the [Plugin Setup Guide](https://github.com/TCF-30/SPDX_Eclipse_Plugin/wiki/Plugin-Setup-Guide) wiki page.
