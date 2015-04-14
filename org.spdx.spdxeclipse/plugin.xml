@@ -6,13 +6,20 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="true"
-            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
-         <command
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?before=additions">
+      	<separator
+       		name="separator_1"
+       		visible="true">
+		</separator>
+         	<command
                commandId="org.spdx.spdxeclipse.command"
-               icon="Assets/Images/spdx_logo.jpg"
                label="Generate SPDX"
-               style="push">
-         </command>
+               style="push"
+         	</command>
+         <separator
+       		name="separator_2"
+       	 	visible="true">
+		 </separator>
       </menuContribution>
    </extension>
 </plugin>
