@@ -9,6 +9,7 @@
             locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
          <command
                commandId="org.spdx.spdxeclipse.command"
+               icon="Assets/Images/spdx_logo.jpg"
                label="Generate SPDX"
                style="push">
          </command>
