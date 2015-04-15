@@ -26,5 +26,10 @@ public class utilities {
 		return true;
 	}
 	
-
+	// packages the current file to be sent to DoSOCS into a .tar file
+	public String PackageFile( String file ) {
+		
+		return null;
+	}
+	
 }
