@@ -8,7 +8,7 @@
             allPopups="true"
             locationURI="popup:org.eclipse.ui.popup.any">
       	<separator
-       		name="separator_1"
+       		name="org.spdx.spdxeclipse.start"
        		visible="true">
 		</separator>
          	<command
@@ -17,7 +17,7 @@
                 style="push">
          	</command>
          <separator
-       		name="separator_2"
+       		name="org.spdx.spdxeclipse.end"
        	 	visible="true">
 		 </separator>
       </menuContribution>
