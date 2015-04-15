@@ -10,11 +10,11 @@ import utils.utilities;
 public class handler extends AbstractHandler {
 
 	public Object execute (ExecutionEvent event) throws ExecutionException {
-		
+		String str = "whatever";
 		utilities utils = new utilities();
 		
-		String workspacedir = utils.GetWorkspaceDirectory();
-		System.out.printf("workspace dir: %s\n", workspacedir);
+		String filedir = utils.GetFileDirectory(str);
+		System.out.printf("GetFileDirectory() : %s\n", filedir);
 		
 		return null;
 	}
