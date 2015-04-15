@@ -1,8 +1,18 @@
 package utils;
 
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.PlatformUI;
 
 public class utilities {
+	
+	public String GetOpenFileName() {
+		
+		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+		String fileName = activePage.getActiveEditor().getEditorInput().getName();
+		
+		return fileName;
+	}
 	
 	// Finds the current workspace directory and returns it as a string; otherwise returns null
 	public String GetWorkspaceDirectory() {
