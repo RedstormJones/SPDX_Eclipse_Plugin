@@ -14,6 +14,12 @@ public class utilities {
 		return null;
 	}
 	
+	// validates that FOSSology is installed
+	public Boolean ValidateFOSSology() {
+		
+		return true;
+	}
+	
 	// validates that the DoSPDX.py ran successfully
 	public Boolean ValidateDoSOCS() {
 		
