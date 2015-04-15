@@ -5,7 +5,7 @@ public class utilities {
 	// Finds the current workspace directory and returns it as a string; otherwise returns null
 	public String GetWorkspaceDirectory() {
 		
-		return null;
+		return "Hello World!";
 	}
 	
 	// Finds the directory path for the file given as a parameter
