@@ -12,7 +12,7 @@
        		visible="true">
 		</separator>
          	<command
-                commandId="org.spdx.spdxeclipse.command"
+                commandId="org.spdx.spdxeclipse.pop"
                 label="Generate SPDX"
                 style="push">
          	</command>
@@ -25,10 +25,16 @@
             allPopups="false"
             locationURI="menu:project">
          <command
-               commandId="org.spdx.spdxeclipse.command2"
+               commandId="org.spdx.spdxeclipse.menu"
                label="Generate SPDX"
                style="push">
          </command>
       </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.spdx.spdxeclipse.handler1">
+      </handler>
    </extension>
 </plugin>
