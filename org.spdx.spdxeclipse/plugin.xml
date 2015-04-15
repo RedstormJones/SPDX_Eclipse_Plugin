@@ -13,8 +13,6 @@
 		</separator>
          	<command
                 commandId="org.spdx.spdxeclipse.command"
-                disabledIcon="Assets/Images/spdx_logo.jpg"
-                icon="Assets/Images/spdx_logo.jpg"
                 label="Generate SPDX"
                 style="push">
          	</command>
@@ -22,6 +20,15 @@
        		name="separator_2"
        	 	visible="true">
 		 </separator>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:project">
+         <command
+               commandId="org.spdx.spdxeclipse.command2"
+               label="Generate SPDX"
+               style="push">
+         </command>
       </menuContribution>
    </extension>
 </plugin>
