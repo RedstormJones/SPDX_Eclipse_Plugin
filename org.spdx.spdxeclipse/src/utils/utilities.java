@@ -6,9 +6,30 @@ public class utilities {
 	public String GetWorkspaceDirectory() {
 		
 		return null;
-		
 	}
 	
+	// Finds the directory path for the file given as a parameter
+	public String GetFileDirectory( String file ) {
+		
+		return null;
+	}
 	
-
+	// validates that FOSSology is installed
+	public Boolean ValidateFOSSology() {
+		
+		return true;
+	}
+	
+	// validates that the DoSPDX.py ran successfully
+	public Boolean ValidateDoSOCS() {
+		
+		return true;
+	}
+	
+	// packages the current file to be sent to DoSOCS into a .tar file
+	public String PackageFile( String file ) {
+		
+		return null;
+	}
+	
 }
