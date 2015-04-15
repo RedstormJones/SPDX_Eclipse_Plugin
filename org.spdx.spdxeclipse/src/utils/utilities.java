@@ -14,6 +14,11 @@ public class utilities {
 		return null;
 	}
 	
+	// validates that the DoSPDX.py ran successfully
+	public Boolean ValidateDoSOCS() {
+		
+		return true;
+	}
 	
 
 }
