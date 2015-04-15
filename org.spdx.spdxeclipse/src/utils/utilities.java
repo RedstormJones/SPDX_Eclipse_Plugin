@@ -6,7 +6,12 @@ public class utilities {
 	public String GetWorkspaceDirectory() {
 		
 		return null;
+	}
+	
+	// Finds the directory path for the file given as a parameter
+	public String GetFileDirectory( String file ) {
 		
+		return null;
 	}
 	
 	
