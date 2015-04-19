@@ -37,6 +37,7 @@ public class utilities {
 		else { return wksp_dir; }
 	}
 	
+	
 	// Returns the filename of the currently open file in the editor
 	public String GetFilename()
 	{		
@@ -48,28 +49,38 @@ public class utilities {
 	}
 	
 	
-	// Gets the workspace directory and creates a spdx/ directory for storing
-	// the spdx documents. Then executes library functions for creating a .tar
-	// file of the file specified in the filepath parameter.
-	public String PackageFile( String filepath )
+	public String CreateSPDXDirectory() throws Exception
 	{
 		IPath wksp_dir = null;
-		String tarfilename = GetFilename();
 		
 		// get the workspace directory path
 		try { wksp_dir = GetWorkspaceDirectory(); }
 		catch (FileNotFoundException e) { e.printStackTrace(); }
 		
-		// Create the SPDX/ directory in the workspace directory
+		// Setup string for .tar filepath and create a File object
 		String tar_fp = wksp_dir.append("/SPDX").toOSString();
 		File spdx = new File(tar_fp);
-		if(!spdx.mkdir()) {
-			System.out.println("creating <workspace>/spdx directory failed");
-			return null;
-		}
 		
-		// Piece together the path for where to put .tar files and the filename
-		String path_to_tar = tar_fp + "/" + tarfilename + ".tar";
+		// Create the SPDX/ directory in the workspace directory
+		if(!spdx.mkdir()) { throw new Exception(); }
+		else { return tar_fp; }
+	}
+	
+	
+	// Gets the workspace directory and creates a spdx/ directory for storing
+	// the spdx documents. Then executes library functions for creating a .tar
+	// file of the file specified in the filepath parameter.
+	public String PackageFile( String filepath )
+	{
+		String path_to_tar = null;
+
+		// Grab the filename of the currently open file in the editor
+		String tarfilename = GetFilename();
+		
+		// Try to create the path for where to put .tar and .spdx files
+		try { path_to_tar = CreateSPDXDirectory() + "/" + tarfilename + ".tar"; }
+		catch (Exception e) { e.printStackTrace(); }
+		
 		
 		
 		
