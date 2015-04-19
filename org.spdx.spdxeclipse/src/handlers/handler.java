@@ -1,8 +1,6 @@
 package handlers;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -14,16 +12,17 @@ public class handler extends AbstractHandler {
 	{
 		utilities utils = new utilities();
 		String filepath = null;
-		String tarpath = null;
+		String filename = null;
 		
-		try { filepath = utils.GetFileAbsolutePath(); }
+		try {
+			filepath = utils.GetFileAbsolutePath();
+			filename = utils.GetFilename();
+		}
 		catch (FileNotFoundException e) { e.printStackTrace(); }
 		
-		try { tarpath = utils.PackageFile(filepath); }
-		catch (IOException e) {	e.printStackTrace(); }
+		String tarpath = utils.PackageFile(filepath);		
 		
-		
-		System.out.printf("\nfilepath: %s\ntarpath: %s\n", filepath.toString(), tarpath);
+		System.out.printf("\nfilename: %s\nfilepath: %s\ntarpath: %s\n", filename, filepath.toString(), tarpath);
 
 		
 		return null;
