@@ -1,7 +1,11 @@
 package utils;
 
-import java.io.FileNotFoundException;
+
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+//import java.util.zip.GZIPOutputStream;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspace;
@@ -9,6 +13,8 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
+
+
 
 public class utilities {
 	
@@ -57,13 +63,14 @@ public class utilities {
 		try { wksp_dir = GetWorkspaceDirectory(); }
 		catch (FileNotFoundException e) { e.printStackTrace(); }
 		
-		// Setup string for .tar filepath and create a File object
+		// Setup string for .tar filepath
 		String tar_fp = wksp_dir.append("/SPDX").toOSString();
-		File spdx = new File(tar_fp);
 		
 		// Create the SPDX/ directory in the workspace directory
-		if(!spdx.mkdir()) { throw new Exception(); }
-		else { return tar_fp; }
+		File spdx = new File(tar_fp);
+		spdx.mkdir();
+		
+		return tar_fp;
 	}
 	
 	
@@ -73,6 +80,8 @@ public class utilities {
 	public String PackageFile( String filepath )
 	{
 		String path_to_tar = null;
+		FileOutputStream tar_output_dest = null;
+//		GZIPOutputStream tar_output_stream = null;
 
 		// Grab the filename of the currently open file in the editor
 		String tarfilename = GetFilename();
@@ -81,8 +90,16 @@ public class utilities {
 		try { path_to_tar = CreateSPDXDirectory() + "/" + tarfilename + ".tar"; }
 		catch (Exception e) { e.printStackTrace(); }
 		
+
+		try { tar_output_dest = new FileOutputStream(path_to_tar); }
+		catch (FileNotFoundException e) { e.printStackTrace(); }
 		
+//		try { tar_output_stream = new GZIPOutputStream(tar_output_dest); }
+//		catch (IOException e) {	e.printStackTrace(); }
+//		new TarOutputStream( new BufferedOutputStream( tar_output_dest ) );
 		
+		try { tar_output_dest.close(); }
+		catch (IOException e) { e.printStackTrace(); }
 		
 		return path_to_tar;
 	}
