@@ -1,32 +1,26 @@
 package utils;
 
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.ui.IWorkbenchPage;
+import java.io.FileNotFoundException;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 
 public class utilities {
 	
-	public String GetOpenFileName() {
-		
-		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		String fileName = activePage.getActiveEditor().getEditorInput().getName();
-		
-		return fileName;
-	}
-	
-	// Finds the current workspace directory and returns it as a string; otherwise returns null
-	public String GetWorkspaceDirectory() {
-		
-		String workspacepath = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
-		
-		return workspacepath;
-	}
-	
 	// Finds the directory path for the file given as a parameter
-	public String GetFileDirectory( String file ) {
-		String workspacedir = GetWorkspaceDirectory();
+	public String GetFileAbsolutePath( ) throws FileNotFoundException
+	{
+		String filepath = null;
+		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
 		
-		return workspacedir + "/" + file;
+		if(ifile == null) {
+			throw new FileNotFoundException(); }
+		
+		filepath = ifile.getRawLocation().makeAbsolute().toOSString();
+		
+		return filepath;
 	}
 	
 	// validates that FOSSology is installed
