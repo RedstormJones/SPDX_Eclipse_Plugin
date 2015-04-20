@@ -1,8 +1,6 @@
 package handlers;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -28,9 +26,9 @@ public class handler extends AbstractHandler {
 			
 			String directory = utils.CreateSPDXDirectory();
 			
-			String tarpath = utils.PackageFile(directory, filename);		
+			utils.CreateTarball(directory, filename, filepath);		
 			
-			System.out.printf("\nfilename: %s\nfilepath: %s\ntarpath: %s\n", filename, filepath.toString(), tarpath);
+			System.out.printf("\nfilename: %s\nfilepath: %s", filename, filepath.toString());
 		}
 		else
 		{

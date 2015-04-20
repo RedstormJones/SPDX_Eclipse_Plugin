@@ -3,13 +3,7 @@ package utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-//import java.util.zip.GZIPOutputStream;
-
-
 import java.io.InputStreamReader;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -26,16 +20,24 @@ public class utilities {
 		
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
-		if(ifile == null) { throw new FileNotFoundException(); }
 		
-		filepath = ifile.getRawLocation().makeAbsolute().toOSString();
-		
-		if(filepath == null) 
+		if(ifile == null) 
 		{ 
 			throw new FileNotFoundException();
 		}
-		
-		return filepath;
+		else
+		{
+			filepath = ifile.getRawLocation().makeAbsolute().toOSString();
+			
+			if(filepath == null) 
+			{ 
+				throw new FileNotFoundException();
+			}
+			else
+			{
+				return filepath;
+			}
+		}
 	}
 		
 	// Returns the workspace directory
@@ -68,10 +70,8 @@ public class utilities {
 	{
 		IPath wksp_dir = GetWorkspaceDirectory();
 		
-		// Setup string for .tar filepath
 		String tar_fp = wksp_dir.append("/SPDX").toOSString();
 		
-		// Create the SPDX/ directory in the workspace directory
 		File spdx = new File(tar_fp);
 		spdx.mkdir();
 		
@@ -80,18 +80,18 @@ public class utilities {
 	
 	// This method executes library functions for creating .tar
 	// file of the file specified in the filepath parameter.
-	public String PackageFile(String directory, String filename)
+	public Boolean CreateTarball(String target_directory, String tar_file_name, String file_directory)
 	{
 		try 
 		{
-			Process createTar = Runtime.getRuntime().exec("cd " + directory + "&& tar -c " + filename + ".tar");
+			Process createTar = Runtime.getRuntime().exec("cd " + target_directory + "&& tar -c " + tar_file_name + ".tar " + file_directory);
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
 		
-		return null;
+		return true;
 	}
 	
 	// validates that FOSSology is installed
