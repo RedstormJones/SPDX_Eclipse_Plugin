@@ -17,18 +17,20 @@ public class handler extends AbstractHandler {
 
 		if (utils.ValidateFOSSology() && utils.ValidateDoSOCS())
 		{
-//			String filepath = null;
-//			String filename = null;
-//			
-//			try {
-//				filepath = utils.GetFileAbsolutePath();
-//				filename = utils.GetFilename();
-//			}
-//			catch (FileNotFoundException e) { e.printStackTrace(); }
-//			
-//			String tarpath = utils.PackageFile(filepath);		
-//			
-//			System.out.printf("\nfilename: %s\nfilepath: %s\ntarpath: %s\n", filename, filepath.toString(), tarpath);
+			String filepath = null;
+			String filename = null;
+			
+			try {
+				filepath = utils.GetFileAbsolutePath();
+				filename = utils.GetOpenFilename();
+			}
+			catch (FileNotFoundException e) { e.printStackTrace(); }
+			
+			String directory = utils.CreateSPDXDirectory();
+			
+			String tarpath = utils.PackageFile(directory, filename);		
+			
+			System.out.printf("\nfilename: %s\nfilepath: %s\ntarpath: %s\n", filename, filepath.toString(), tarpath);
 		}
 		else
 		{
