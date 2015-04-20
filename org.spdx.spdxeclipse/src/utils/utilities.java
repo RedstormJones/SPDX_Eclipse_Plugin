@@ -72,8 +72,18 @@ public class utilities {
 		
 		String tar_fp = wksp_dir.append("/SPDX").toOSString();
 		
-		File spdx = new File(tar_fp);
-		spdx.mkdir();
+		File file = new File(tar_fp);
+				
+		Boolean b = false;
+
+		if (!file.exists())
+		{			
+			b = file.mkdirs();
+		}
+		else
+		{
+			// Directory all ready exists.
+		}
 		
 		return tar_fp;
 	}
@@ -84,7 +94,7 @@ public class utilities {
 	{
 		try 
 		{
-			Process createTar = Runtime.getRuntime().exec("cd " + target_directory + "&& tar -c " + tar_file_name + ".tar " + file_directory);
+			Runtime.getRuntime().exec("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
 		} 
 		catch (Exception e) 
 		{

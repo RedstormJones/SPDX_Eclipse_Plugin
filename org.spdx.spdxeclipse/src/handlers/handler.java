@@ -28,11 +28,7 @@ public class handler extends AbstractHandler {
 			
 			utils.CreateTarball(directory, filename, filepath);		
 			
-			System.out.printf("\nfilename: %s\nfilepath: %s", filename, filepath.toString());
-		}
-		else
-		{
-			
+			System.out.printf("\ndirectory: %s\nfilename: %s\nfilepath: %s", directory, filename, filepath);
 		}
 		
 		return null;
