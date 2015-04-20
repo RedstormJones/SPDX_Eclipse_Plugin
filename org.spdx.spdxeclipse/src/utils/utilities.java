@@ -1,11 +1,14 @@
 package utils;
 
-
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 //import java.util.zip.GZIPOutputStream;
+
+
+import java.io.InputStreamReader;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspace;
@@ -13,8 +16,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
-
-
 
 public class utilities {
 	
@@ -32,8 +33,7 @@ public class utilities {
 		
 		return filepath;
 	}
-	
-	
+		
 	// Returns the workspace directory
 	public IPath GetWorkspaceDirectory() throws FileNotFoundException
 	{
@@ -42,7 +42,6 @@ public class utilities {
 		if(wksp_dir == null) { throw new FileNotFoundException(); }
 		else { return wksp_dir; }
 	}
-	
 	
 	// Returns the filename of the currently open file in the editor
 	public String GetFilename()
@@ -53,7 +52,6 @@ public class utilities {
 		
 		return filename;
 	}
-	
 	
 	public String CreateSPDXDirectory() throws Exception
 	{
@@ -72,7 +70,6 @@ public class utilities {
 		
 		return tar_fp;
 	}
-	
 	
 	// Gets the workspace directory and creates a spdx/ directory for storing
 	// the spdx documents. Then executes library functions for creating a .tar
@@ -104,18 +101,37 @@ public class utilities {
 		return path_to_tar;
 	}
 	
-	
 	// validates that FOSSology is installed
-	public Boolean ValidateFOSSology() {
+	public Boolean ValidateFOSSology() 
+	{
 		
 		return true;
 	}
 	
 	
 	// validates that the DoSPDX.py ran successfully
-	public Boolean ValidateDoSOCS() {
+	public Boolean ValidateDoSOCS()
+	{ 
+		try
+		{
+			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
 		
-		return true;
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
+			
+			if (bufferedReader.readLine() != null)
+			{	
+				return true;
+			}
+			
+			bufferedReader.close();
+        }
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			
+		}
+		
+		return false;
 	}
 	
 }
