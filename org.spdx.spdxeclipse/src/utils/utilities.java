@@ -1,8 +1,10 @@
 package utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 
 import org.eclipse.core.resources.IFile;
@@ -164,25 +166,45 @@ public class utilities {
 		return false;
 	}
 	
-	public Boolean CreateSPDX()
+	public Boolean CreateSPDX(String target_directory, String tar_file_name)
 	{ 
 		try
 		{
 			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
-		
+			
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
 			
-			if (bufferedReader.readLine() != null)
-			{	
-				String DoSPDXLoc = bufferedReader.readLine();
+			String DoSPDXLoc = null;
+			String dospdxOutput = null;
+			
+			if ((DoSPDXLoc = bufferedReader.readLine()) != null)
+			{					
+				String target_spdxfile = target_directory + "/" + tar_file_name + ".tar.spdx";
+				System.out.println(target_spdxfile);
 				
-				int index= DoSPDXLoc.lastIndexOf('/');
+				File spdxFile = new File(target_spdxfile);
+				if(!spdxFile.exists())
+				{
+					spdxFile.createNewFile();
+				}
+				
+				String DoSPDXcmd = DoSPDXLoc + " -p " + target_directory + "/" + tar_file_name + ".tar --scan --scanOption fossology --print RDF";
+				System.out.println(DoSPDXcmd);
 
-				DoSPDXLoc = DoSPDXLoc.substring(0, index);
+				Process spdxDocInput = Runtime.getRuntime().exec(DoSPDXcmd);
 				
-				System.out.println(DoSPDXLoc);
+				BufferedReader spdxOutput = new BufferedReader(new InputStreamReader(spdxDocInput.getInputStream()));
+				BufferedWriter spdxFileWriter = new BufferedWriter(new FileWriter(spdxFile.getName(), true));
 				
-				//Process genSPDX = Runtime.getRuntime().exec("cd" + DoSPDXLoc + " && ./DoSPDX.py");
+				while((dospdxOutput = spdxOutput.readLine()) != null)
+				{
+					System.out.println(dospdxOutput);
+					spdxFileWriter.append(dospdxOutput);
+					//.write(dospdxOutput);
+				}
+				
+				spdxOutput.close();
+				spdxFileWriter.close();
 			}
 			
 			bufferedReader.close();

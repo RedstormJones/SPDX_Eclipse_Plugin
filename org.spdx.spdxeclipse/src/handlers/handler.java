@@ -31,7 +31,7 @@ public class handler extends AbstractHandler {
 			
 			utils.CreateTarball(directory, filename, filepath);		
 						
-			utils.CreateSPDX();		
+			utils.CreateSPDX(directory, filename);		
 
 			
 			System.out.printf("\ndirectory: %s\nfilename: %s\nfilepath: %s", directory, filename, filepath);
