@@ -159,25 +159,30 @@ public class utilities {
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			
 		}
 		
 		return false;
 	}
 	
-	public Boolean GenerateSPDX(String TarDirectory, String SPDXDirectory)
+	public Boolean CreateSPDX()
 	{ 
 		try
 		{
 			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
 		
-			Process genSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
-
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
 			
 			if (bufferedReader.readLine() != null)
 			{	
-				return true;
+				String DoSPDXLoc = bufferedReader.readLine();
+				
+				int index= DoSPDXLoc.lastIndexOf('/');
+
+				DoSPDXLoc = DoSPDXLoc.substring(0, index);
+				
+				System.out.println(DoSPDXLoc);
+				
+				//Process genSPDX = Runtime.getRuntime().exec("cd" + DoSPDXLoc + " && ./DoSPDX.py");
 			}
 			
 			bufferedReader.close();
@@ -185,8 +190,9 @@ public class utilities {
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			
 		}
+		
+
 		
 		return false;
 	}
