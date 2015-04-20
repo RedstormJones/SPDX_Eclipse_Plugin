@@ -130,8 +130,6 @@ public class utilities {
 	{
 		try 
 		{
-			System.out.println("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
-
 			Runtime.getRuntime().exec("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
 		} 
 		catch (Exception e) 
