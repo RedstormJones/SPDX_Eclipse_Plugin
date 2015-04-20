@@ -22,7 +22,10 @@ public class handler extends AbstractHandler {
 				filepath = utils.GetFileAbsolutePath();
 				filename = utils.GetOpenFilename();
 			}
-			catch (FileNotFoundException e) { e.printStackTrace(); }
+			catch (FileNotFoundException e) 
+			{ 
+				e.printStackTrace();
+			}
 			
 			String directory = utils.CreateSPDXDirectory();
 			
