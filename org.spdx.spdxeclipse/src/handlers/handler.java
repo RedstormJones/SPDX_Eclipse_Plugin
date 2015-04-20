@@ -27,6 +27,8 @@ public class handler extends AbstractHandler {
 				e.printStackTrace();
 			}
 			
+			utils.GetProjectDirectory();
+						
 			String directory = utils.CreateSPDXDirectory();
 			
 			utils.CreateTarball(directory, filename, filepath);		

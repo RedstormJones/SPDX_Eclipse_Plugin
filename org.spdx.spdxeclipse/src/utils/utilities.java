@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -49,6 +50,41 @@ public class utilities {
 		return wksp_dir;
 	}
 	
+	public IPath GetProjectDirectory()
+	{
+		IPath wksp_dir = GetWorkspaceDirectory();
+
+		int forwardSlashes = 0;
+		
+		for(int i = 0; i < wksp_dir.toOSString().length(); i++) 
+		{
+		    if(wksp_dir.toOSString().charAt(i) == '/')
+		    {
+		    	forwardSlashes++;
+		    }
+		}
+			
+		String filepath = null;
+		
+		try 
+		{
+			filepath = GetFileAbsolutePath();
+						
+		}
+		catch (FileNotFoundException e) 
+		{ 
+			e.printStackTrace();
+		}
+		
+		String[] directories = filepath.split("/");
+		
+		String proj_name = directories[forwardSlashes+1];
+		
+		IPath proj_dir = wksp_dir.append("/" + proj_name + "");
+				
+		return proj_dir;
+	}
+	
 	// Returns the filename of the currently open file in the editor
 	public String GetOpenFilename() throws FileNotFoundException
 	{		
@@ -68,9 +104,9 @@ public class utilities {
 	
 	public String CreateSPDXDirectory() 
 	{
-		IPath wksp_dir = GetWorkspaceDirectory();
+		IPath proj_dir = GetProjectDirectory();
 		
-		String tar_fp = wksp_dir.append("/SPDX").toOSString();
+		String tar_fp = proj_dir.append("/SPDX").toOSString();
 		
 		File file = new File(tar_fp);
 				
