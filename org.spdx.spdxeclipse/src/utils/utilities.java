@@ -194,13 +194,11 @@ public class utilities {
 				Process spdxDocInput = Runtime.getRuntime().exec(DoSPDXcmd);
 				
 				BufferedReader spdxOutput = new BufferedReader(new InputStreamReader(spdxDocInput.getInputStream()));
-				BufferedWriter spdxFileWriter = new BufferedWriter(new FileWriter(spdxFile.getName(), true));
+				BufferedWriter spdxFileWriter = new BufferedWriter(new FileWriter(spdxFile));
 				
 				while((dospdxOutput = spdxOutput.readLine()) != null)
 				{
-					System.out.println(dospdxOutput);
-					spdxFileWriter.append(dospdxOutput);
-					//.write(dospdxOutput);
+					spdxFileWriter.append(dospdxOutput + "\n");
 				}
 				
 				spdxOutput.close();
