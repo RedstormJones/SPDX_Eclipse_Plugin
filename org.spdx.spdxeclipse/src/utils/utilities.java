@@ -110,15 +110,9 @@ public class utilities {
 		
 		File file = new File(tar_fp);
 				
-		Boolean b = false;
-
 		if (!file.exists())
 		{			
-			b = file.mkdirs();
-		}
-		else
-		{
-			// Directory all ready exists.
+			file.mkdirs();
 		}
 		
 		return tar_fp;
@@ -171,4 +165,29 @@ public class utilities {
 		return false;
 	}
 	
+	public Boolean GenerateSPDX(String TarDirectory, String SPDXDirectory)
+	{ 
+		try
+		{
+			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
+		
+			Process genSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
+
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
+			
+			if (bufferedReader.readLine() != null)
+			{	
+				return true;
+			}
+			
+			bufferedReader.close();
+        }
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			
+		}
+		
+		return false;
+	}
 }
