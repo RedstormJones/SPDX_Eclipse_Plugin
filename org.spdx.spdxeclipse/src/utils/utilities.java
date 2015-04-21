@@ -212,8 +212,6 @@ public class utilities {
 			e.printStackTrace();
 		}
 		
-
-		
 		return false;
 	}
 }
