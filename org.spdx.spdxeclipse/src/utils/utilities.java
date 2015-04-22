@@ -166,33 +166,38 @@ public class utilities {
 		return false;
 	}
 	
+	// Takes a target directory and a filename as parameters and runs the DoSPDX.py 
+	// command on the combined target directory and file. The output of the command is
+	// written to a .spdx file that is named the same as the tar file name.
 	public Boolean CreateSPDX(String target_directory, String tar_file_name)
 	{ 
 		try
 		{
+			String DoSPDXLoc = null;
+			String dospdxOutput = null;
+			String target_spdxfile = target_directory + "/" + tar_file_name + ".spdx";
+			
+			tar_file_name += ".tar";
+			
 			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
 			
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
 			
-			String DoSPDXLoc = null;
-			String dospdxOutput = null;
-			
 			if ((DoSPDXLoc = bufferedReader.readLine()) != null)
-			{					
-				String target_spdxfile = target_directory + "/" + tar_file_name + ".tar.spdx";
-				System.out.println(target_spdxfile);
-				
+			{
 				File spdxFile = new File(target_spdxfile);
 				if(!spdxFile.exists())
 				{
 					spdxFile.createNewFile();
 				}
 				
-				String DoSPDXcmd = DoSPDXLoc + " -p " + target_directory + "/" + tar_file_name + ".tar --scan --scanOption fossology --print RDF";
-				System.out.println(DoSPDXcmd);
+				// Put all the pieces of the DoSPDX command together and run it
+				String DoSPDXcmd = DoSPDXLoc + " -p " + target_directory + "/" + tar_file_name + " --scan --scanOption fossology --print RDF";
 
 				Process spdxDocInput = Runtime.getRuntime().exec(DoSPDXcmd);
 				
+				// Create a buffered reader and writer for capturing the output of the process running the DoSPDX
+				// command the for writing the captured output to the .spdx file.
 				BufferedReader spdxOutput = new BufferedReader(new InputStreamReader(spdxDocInput.getInputStream()));
 				BufferedWriter spdxFileWriter = new BufferedWriter(new FileWriter(spdxFile));
 				
@@ -200,6 +205,12 @@ public class utilities {
 				{
 					spdxFileWriter.append(dospdxOutput + "\n");
 				}
+				
+				// Remove the .tar file used by the DoSPDX command to clean up the directory. 
+				// Then close the buffered reader and writer.
+				String rmtarcmd = "rm -f " + target_directory + "/" + tar_file_name;
+				@SuppressWarnings("unused")
+				Process RemoveTarFile = Runtime.getRuntime().exec(rmtarcmd);
 				
 				spdxOutput.close();
 				spdxFileWriter.close();
