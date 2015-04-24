@@ -1,9 +1,11 @@
 package handlers;
 
 import java.io.FileNotFoundException;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.CoreException;
 
 import utils.utilities;
 
@@ -26,12 +28,26 @@ public class handler extends AbstractHandler {
 			{ 
 				e.printStackTrace();
 			}
-									
+			
+			// Create the SPDX/ directory within the project
 			String directory = utils.CreateSPDXDirectory();
 			
+			// Create a .tar file from the source file to be scanned
 			utils.CreateTarball(directory, filename, filepath);		
-						
-			utils.CreateSPDX(directory, filename);		
+			
+			// Create the .spdx document from the .tar file and store
+			// in the SPDX/ directory. Remove the .tar file will as well.
+			utils.CreateSPDX(directory, filename);
+			
+			// refresh the Eclipse for the SPDX folder and/or 
+			// updated spdx documents appear in the Package Explorer
+			try { 
+				utils.refreshInstance();
+			}
+			catch (CoreException e) 
+			{
+				e.printStackTrace();
+			}
 		}
 		
 		return null;
