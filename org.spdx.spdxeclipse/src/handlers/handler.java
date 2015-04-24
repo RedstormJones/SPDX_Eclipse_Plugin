@@ -3,8 +3,10 @@ package handlers;
 import java.io.FileNotFoundException;
 
 import org.eclipse.core.commands.AbstractHandler;
+import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.runtime.CoreException;
 
 import utils.utilities;
@@ -13,6 +15,23 @@ public class handler extends AbstractHandler {
 
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{
+		String SPDXDocumentType = null;
+		
+		try 
+		{
+			SPDXDocumentType = event.getCommand().getName();
+			
+			if (SPDXDocumentType != null)
+			{
+				SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
+			}
+			
+		} 
+		catch (NotDefinedException e1) 
+		{
+			e1.printStackTrace();
+		}
+								
 		utilities utils = new utilities();
 
 		if (utils.ValidateFOSSology() && utils.ValidateDoSOCS())
@@ -37,7 +56,7 @@ public class handler extends AbstractHandler {
 			
 			// Create the .spdx document from the .tar file and store
 			// in the SPDX/ directory. Remove the .tar file will as well.
-			if( utils.CreateSPDX(directory, filename) )
+			if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
 			{
 				// refresh the Eclipse for the SPDX folder and/or 
 				// updated spdx documents appear in the Package Explorer

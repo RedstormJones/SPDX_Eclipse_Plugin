@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 
+import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
@@ -172,7 +173,7 @@ public class utilities {
 	// Takes a target directory and a filename as parameters and runs the DoSPDX.py 
 	// command on the combined target directory and file. The output of the command is
 	// written to a .spdx file that is named the same as the tar file name.
-	public Boolean CreateSPDX(String target_directory, String tar_file_name)
+	public Boolean CreateSPDX(String target_directory, String tar_file_name, String spdx_document_type)
 	{ 
 		try
 		{
@@ -195,7 +196,7 @@ public class utilities {
 				}
 				
 				// Put all the pieces of the DoSPDX command together and run it
-				String DoSPDXcmd = DoSPDXLoc + " -p " + target_directory + "/" + tar_file_name + " --scan --scanOption fossology --print RDF";
+				String DoSPDXcmd = DoSPDXLoc + " -p " + target_directory + "/" + tar_file_name + " --scan --scanOption fossology --print " + spdx_document_type;
 
 				Process spdxDocInput = Runtime.getRuntime().exec(DoSPDXcmd);
 				
