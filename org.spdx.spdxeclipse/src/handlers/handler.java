@@ -37,16 +37,17 @@ public class handler extends AbstractHandler {
 			
 			// Create the .spdx document from the .tar file and store
 			// in the SPDX/ directory. Remove the .tar file will as well.
-			utils.CreateSPDX(directory, filename);
-			
-			// refresh the Eclipse for the SPDX folder and/or 
-			// updated spdx documents appear in the Package Explorer
-			try { 
-				utils.refreshInstance();
-			}
-			catch (CoreException e) 
+			if( utils.CreateSPDX(directory, filename) )
 			{
-				e.printStackTrace();
+				// refresh the Eclipse for the SPDX folder and/or 
+				// updated spdx documents appear in the Package Explorer
+				try { 
+					utils.refreshInstance();
+				}
+				catch (CoreException e) 
+				{
+					e.printStackTrace();
+				}
 			}
 		}
 		

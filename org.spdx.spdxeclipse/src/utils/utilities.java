@@ -224,9 +224,10 @@ public class utilities {
 		catch (Exception e)
 		{
 			e.printStackTrace();
+			return false;
 		}
 		
-		return false;
+		return true;
 	}
 	
 	public void refreshInstance() throws CoreException
@@ -234,4 +235,5 @@ public class utilities {
 		IWorkspaceRoot workspaceroot = ResourcesPlugin.getWorkspace().getRoot();
 		workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
-}
+	
+}	// END OF utilities CLASS
