@@ -7,39 +7,83 @@
       <menuContribution
             allPopups="true"
             locationURI="popup:org.eclipse.ui.popup.any">
-      	<separator
-       		name="org.spdx.spdxeclipse.start"
-       		visible="true">
-		</separator>
-         	<command
-                commandId="org.spdx.spdxeclipse.popup"
-                label="Generate SPDX"
-                style="push">
-         	</command>
-         <separator
-       		name="org.spdx.spdxeclipse.end"
-       	 	visible="true">
-		 </separator>
+      		<separator
+       			name="org.spdx.spdxeclipse.start"
+      			visible="true">
+			</separator>
+            <menu 
+            label="Generate SPDX"
+            commandId="org.spdx.spdxeclipse.popup">
+         		<command
+                	commandId="org.spdx.spdxeclipse.popup.submenu.json"
+                	label="JSON Format"
+                	style="push">
+         		</command>
+         		<command
+                	commandId="org.spdx.spdxeclipse.popup.submenu.tag"
+                	label="TAG Format"
+                	style="push">
+         		</command>
+         		<command
+                	commandId="org.spdx.spdxeclipse.popup.submenu.rdf"
+                	label="RDF Format"
+                	style="push">
+         		</command>
+		 	</menu>
+		 	<separator
+       			name="org.spdx.spdxeclipse.end"
+      			visible="true">
+			</separator>
       </menuContribution>
       <menuContribution
             allPopups="false"
             locationURI="menu:project">
-         <command
-               commandId="org.spdx.spdxeclipse.menu"
-               label="Generate SPDX"
-               style="push">
-         </command>
+            <menu 
+            label="Generate SPDX"
+            commandId="org.spdx.spdxeclipse.menu">
+         		<command
+                	commandId="org.spdx.spdxeclipse.menu.submenu.json"
+                	label="JSON Format"
+                	style="push">
+         		</command>
+         		<command
+                	commandId="org.spdx.spdxeclipse.menu.submenu.tag"
+                	label="TAG Format"
+                	style="push">
+         		</command>
+         		<command
+                	commandId="org.spdx.spdxeclipse.menu.submenu.rdf"
+                	label="RDF Format"
+                	style="push">
+         		</command>
+		 	</menu>
       </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="handlers.handler"
-            commandId="org.spdx.spdxeclipse.popup">
+            commandId="org.spdx.spdxeclipse.popup.submenu.json">
       </handler>
       <handler
             class="handlers.handler"
-            commandId="org.spdx.spdxeclipse.menu">
+            commandId="org.spdx.spdxeclipse.popup.submenu.tag">
+      </handler>
+      <handler
+            class="handlers.handler"
+            commandId="org.spdx.spdxeclipse.popup.submenu.rdf">
+      </handler>
+      <handler
+            class="handlers.handler"
+            commandId="org.spdx.spdxeclipse.menu.submenu.json">
+      </handler>
+      <handler
+            class="handlers.handler"
+            commandId="org.spdx.spdxeclipse.menu.submenu.tag">
+      </handler>
+      <handler
+            class="handlers.handler"
+            commandId="org.spdx.spdxeclipse.menu.submenu.rdf">
       </handler>
    </extension>
 </plugin>
