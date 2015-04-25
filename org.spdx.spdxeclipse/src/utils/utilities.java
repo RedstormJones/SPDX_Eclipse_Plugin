@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 
-import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
@@ -236,5 +235,7 @@ public class utilities {
 		IWorkspaceRoot workspaceroot = ResourcesPlugin.getWorkspace().getRoot();
 		workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
+	
+	
 	
 }	// END OF utilities CLASS
