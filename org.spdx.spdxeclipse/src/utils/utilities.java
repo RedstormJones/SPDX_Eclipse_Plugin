@@ -236,6 +236,4 @@ public class utilities {
 		workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
 	}
 	
-	
-	
 }	// END OF utilities CLASS
