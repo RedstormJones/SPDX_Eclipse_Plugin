@@ -11,7 +11,7 @@ import org.eclipse.core.runtime.CoreException;
 
 import utils.utilities;
 
-public class handler extends AbstractHandler {
+public class menuHandler extends AbstractHandler {
 
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{

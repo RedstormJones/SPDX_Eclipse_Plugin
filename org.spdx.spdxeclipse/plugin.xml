@@ -62,27 +62,27 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="handlers.handler"
+            class="handlers.menuHandler"
             commandId="org.spdx.spdxeclipse.popup.submenu.json">
       </handler>
       <handler
-            class="handlers.handler"
+            class="handlers.menuHandler"
             commandId="org.spdx.spdxeclipse.popup.submenu.tag">
       </handler>
       <handler
-            class="handlers.handler"
+            class="handlers.menuHandler"
             commandId="org.spdx.spdxeclipse.popup.submenu.rdf">
       </handler>
       <handler
-            class="handlers.handler"
+            class="handlers.menuHandler"
             commandId="org.spdx.spdxeclipse.menu.submenu.json">
       </handler>
       <handler
-            class="handlers.handler"
+            class="handlers.menuHandler"
             commandId="org.spdx.spdxeclipse.menu.submenu.tag">
       </handler>
       <handler
-            class="handlers.handler"
+            class="handlers.menuHandler"
             commandId="org.spdx.spdxeclipse.menu.submenu.rdf">
       </handler>
    </extension>
