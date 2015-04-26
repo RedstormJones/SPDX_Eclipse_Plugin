@@ -18,17 +18,23 @@
 package handlers;
 
 import java.io.FileNotFoundException;
+import java.util.logging.Logger;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Display;
 
 import utils.utilities;
 
 public class menuHandler extends AbstractHandler {
-
+	
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{
 		String SPDXDocumentType = null;
@@ -36,16 +42,17 @@ public class menuHandler extends AbstractHandler {
 		try 
 		{
 			SPDXDocumentType = event.getCommand().getName();
-			
-			if (SPDXDocumentType != null)
-			{
-				SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
-			}
-			
 		} 
 		catch (NotDefinedException e1) 
 		{
-			e1.printStackTrace();
+			Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "Error", e1);
+			ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "Error", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
+			dlg.open();
+		}
+		
+		if (SPDXDocumentType != null)
+		{
+			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
 		}
 								
 		utilities utils = new utilities();

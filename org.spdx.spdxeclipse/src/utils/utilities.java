@@ -159,7 +159,25 @@ public class utilities {
 	// validates that FOSSology is installed
 	public Boolean ValidateFOSSology() 
 	{
-		return true;
+		try
+		{
+			Process findDoSPDX = Runtime.getRuntime().exec("locate nomos");
+		
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
+			
+			if (bufferedReader.readLine() != null)
+			{	
+				return true;
+			}
+			
+			bufferedReader.close();
+        }
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return false;
 	}
 	
 	// validates that the DoSPDX.py ran successfully
