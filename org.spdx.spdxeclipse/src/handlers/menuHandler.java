@@ -75,15 +75,7 @@ public class menuHandler extends AbstractHandler {
 			if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
 			{
 				// refresh the Eclipse for the SPDX folder and/or 
-				// updated spdx documents appear in the Package Explorer
-				try {
-					
-					utils.RefreshInstance();
-				}
-				catch (CoreException e) 
-				{
-					e.printStackTrace();
-				}
+				utils.RefreshInstance();
 			}
 		}
 		

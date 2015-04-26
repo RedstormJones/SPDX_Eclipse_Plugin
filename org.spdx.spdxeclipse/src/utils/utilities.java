@@ -265,9 +265,17 @@ public class utilities {
 		return true;
 	}
 	
-	public void RefreshInstance() throws CoreException
+	public void RefreshInstance()
 	{
 		IWorkspaceRoot workspaceroot = ResourcesPlugin.getWorkspace().getRoot();
-		workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
+		
+		try 
+		{
+			workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
+		} 
+		catch (CoreException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 }
