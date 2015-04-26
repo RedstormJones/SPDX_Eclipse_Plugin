@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 University of Nebraska at Omaha
+ * Copyright © 2015 University of Nebraska at Omaha
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -18,17 +18,10 @@
 package handlers;
 
 import java.io.FileNotFoundException;
-import java.util.logging.Logger;
-
-import org.eclipse.core.commands.AbstractHandler;
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.*;
 import org.eclipse.core.commands.common.NotDefinedException;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.*;
 import org.eclipse.jface.dialogs.ErrorDialog;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 
 import utils.utilities;
