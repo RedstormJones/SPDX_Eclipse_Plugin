@@ -37,7 +37,7 @@ import org.eclipse.ui.PlatformUI;
 public class utilities {
 	
 	// Returns the absolute directory path of the currently open file in the editor
-	public String GetFileAbsolutePath() throws FileNotFoundException
+	public String GetFileAbsolutePath()
 	{
 		String filepath = null;
 		
@@ -46,7 +46,8 @@ public class utilities {
 		
 		if(ifile == null) 
 		{ 
-			throw new FileNotFoundException();
+			return null;
+			//throw new FileNotFoundException();
 		}
 		else
 		{
@@ -54,7 +55,8 @@ public class utilities {
 			
 			if(filepath == null) 
 			{ 
-				throw new FileNotFoundException();
+				return null;
+				//throw new FileNotFoundException();
 			}
 			else
 			{
@@ -88,15 +90,7 @@ public class utilities {
 			
 		String filepath = null;
 		
-		try 
-		{
-			filepath = GetFileAbsolutePath();
-						
-		}
-		catch (FileNotFoundException e) 
-		{ 
-			e.printStackTrace();
-		}
+		filepath = GetFileAbsolutePath();
 		
 		String[] directories = filepath.split("/");
 		
@@ -108,7 +102,7 @@ public class utilities {
 	}
 	
 	// Returns the filename of the currently open file in the editor
-	public String GetOpenFilename() throws FileNotFoundException
+	public String GetOpenFilename()
 	{		
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
@@ -116,7 +110,8 @@ public class utilities {
 		
 		if (filename ==  null)
 		{
-			throw new FileNotFoundException();
+			return null;
+			//throw new FileNotFoundException();
 		}
 		else
 		{
