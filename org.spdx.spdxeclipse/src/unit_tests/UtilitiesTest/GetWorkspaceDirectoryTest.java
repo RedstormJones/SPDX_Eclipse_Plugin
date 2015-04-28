@@ -1,10 +1,10 @@
-package unit_tests;
+package unit_tests.UtilitiesTest;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CreateTarballTest {
+public class GetWorkspaceDirectoryTest {
 
 	@Test
 	public void test() {

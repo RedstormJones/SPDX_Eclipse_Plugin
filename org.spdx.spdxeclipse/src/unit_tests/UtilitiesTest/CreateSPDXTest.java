@@ -1,10 +1,10 @@
-package unit_tests;
+package unit_tests.UtilitiesTest;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class GetOpenFilenameTest {
+public class CreateSPDXTest {
 
 	@Test
 	public void test() {
