@@ -32,47 +32,44 @@ public class menuHandler extends AbstractHandler {
 	{							
 		utilities utils = new utilities();
 
-		if (utils.ValidateFOSSology() && utils.ValidateDoSOCS())
+		String SPDXDocumentType = null;
+		
+		try 
 		{
-			String SPDXDocumentType = null;
-			
-			try 
-			{
-				SPDXDocumentType = event.getCommand().getName();
-			} 
-			catch (NotDefinedException e1) 
-			{
-				Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "Error", e1);
-				ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "Error", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
-				dlg.open();
-			}
-			
-			if (SPDXDocumentType != null)
-			{
-				SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
-			}
-			
-			String filepath = null;
-			String filename = null;
-			
-			filepath = utils.GetFileAbsolutePath();
-			filename = utils.GetOpenFilename();
-			
-			// Create the SPDX/ directory within the project
-			String directory = utils.CreateSPDXDirectory();
-			
-			// Create a .tar file from the source file to be scanned
-			utils.CreateTarball(directory, filename, filepath);		
-			
-			// Create the .spdx document from the .tar file and store
-			// in the SPDX/ directory. Remove the .tar file will as well.
-			if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
-			{
-				// refresh the Eclipse for the SPDX folder and/or 
-				utils.RefreshInstance();
-			}
+			SPDXDocumentType = event.getCommand().getName();
+		} 
+		catch (NotDefinedException e1) 
+		{
+			Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "Error", e1);
+			ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "Error", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
+			dlg.open();
 		}
 		
+		if (SPDXDocumentType != null)
+		{
+			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
+		}
+		
+		String filepath = null;
+		String filename = null;
+		
+		filepath = utils.GetFileAbsolutePath();
+		filename = utils.GetOpenFilename();
+		
+		// Create the SPDX/ directory within the project
+		String directory = utils.CreateSPDXDirectory();
+		
+		// Create a .tar file from the source file to be scanned
+		utils.CreateTarball(directory, filename, filepath);		
+		
+		// Create the .spdx document from the .tar file and store
+		// in the SPDX/ directory. Remove the .tar file will as well.
+		if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
+		{
+			// refresh the Eclipse for the SPDX folder and/or 
+			utils.RefreshInstance();
+		}
+			
 		return null;
 	}
 }

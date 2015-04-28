@@ -23,170 +23,7 @@ import org.eclipse.core.runtime.*;
 import org.eclipse.ui.*;
 
 public class utilities {
-	
-	// Returns the absolute directory path of the currently open file in the editor
-	public String GetFileAbsolutePath()
-	{
-		String filepath = null;
 		
-		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
-		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
-		
-		if(ifile == null) 
-		{ 
-			return null;
-			//throw new FileNotFoundException();
-		}
-		else
-		{
-			filepath = ifile.getRawLocation().makeAbsolute().toOSString();
-			
-			if(filepath == null) 
-			{ 
-				return null;
-				//throw new FileNotFoundException();
-			}
-			else
-			{
-				return filepath;
-			}
-		}
-	}
-		
-	// Returns the workspace directory
-	public IPath GetWorkspaceDirectory()
-	{
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IPath wksp_dir = workspace.getRoot().getLocation();
-		
-		return wksp_dir;
-	}
-	
-	public IPath GetProjectDirectory()
-	{
-		IPath wksp_dir = GetWorkspaceDirectory();
-
-		int forwardSlashes = 0;
-		
-		for(int i = 0; i < wksp_dir.toOSString().length(); i++) 
-		{
-		    if(wksp_dir.toOSString().charAt(i) == '/')
-		    {
-		    	forwardSlashes++;
-		    }
-		}
-			
-		String filepath = null;
-		
-		filepath = GetFileAbsolutePath();
-		
-		String[] directories = filepath.split("/");
-		
-		String proj_name = directories[forwardSlashes+1];
-		
-		IPath proj_dir = wksp_dir.append("/" + proj_name + "");
-				
-		return proj_dir;
-	}
-	
-	// Returns the filename of the currently open file in the editor
-	public String GetOpenFilename()
-	{		
-		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
-		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
-		String filename = ifile.getName();
-		
-		if (filename ==  null)
-		{
-			return null;
-			//throw new FileNotFoundException();
-		}
-		else
-		{
-			return filename;
-		}
-	}
-	
-	public String CreateSPDXDirectory() 
-	{
-		IPath proj_dir = GetProjectDirectory();
-		
-		String tar_fp = proj_dir.append("/SPDX").toOSString();
-		
-		File file = new File(tar_fp);
-				
-		if (!file.exists())
-		{			
-			file.mkdirs();
-		}
-		
-		return tar_fp;
-	}
-	
-	// This method executes library functions for creating .tar
-	// file of the file specified in the filepath parameter.
-	public Boolean CreateTarball(String target_directory, String tar_file_name, String file_directory)
-	{
-		try 
-		{
-			Runtime.getRuntime().exec("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-		
-		return true;
-	}
-	
-	// validates that FOSSology is installed
-	public Boolean ValidateFOSSology() 
-	{
-		try
-		{
-			Process findDoSPDX = Runtime.getRuntime().exec("locate nomos");
-		
-			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
-			
-			if (bufferedReader.readLine() != null)
-			{	
-				return true;
-			}
-			
-			bufferedReader.close();
-        }
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		return false;
-	}
-	
-	// validates that the DoSPDX.py ran successfully
-	public Boolean ValidateDoSOCS()
-	{ 
-		try
-		{
-			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
-		
-			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
-			
-			if (bufferedReader.readLine() != null)
-			{	
-				return true;
-			}
-			
-			bufferedReader.close();
-        }
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		return false;
-	}
-	
 	// Takes a target directory and a filename as parameters and runs the DoSPDX.py 
 	// command on the combined target directory and file. The output of the command is
 	// written to a .spdx file that is named the same as the tar file name.
@@ -246,6 +83,121 @@ public class utilities {
 		}
 		
 		return true;
+	}
+	
+	public String CreateSPDXDirectory() 
+	{
+		IPath proj_dir = GetProjectDirectory();
+		
+		String tar_fp = proj_dir.append("/SPDX").toOSString();
+		
+		File file = new File(tar_fp);
+				
+		if (!file.exists())
+		{			
+			file.mkdirs();
+		}
+		
+		return tar_fp;
+	}
+	
+	// This method executes library functions for creating .tar
+	// file of the file specified in the filepath parameter.
+	public Boolean CreateTarball(String target_directory, String tar_file_name, String file_directory)
+	{
+		try 
+		{
+			Runtime.getRuntime().exec("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return true;
+	}
+	
+	// Returns the absolute directory path of the currently open file in the editor
+	public String GetFileAbsolutePath()
+	{
+		String filepath = null;
+		
+		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
+		
+		if(ifile == null) 
+		{ 
+			return null;
+			//throw new FileNotFoundException();
+		}
+		else
+		{
+			filepath = ifile.getRawLocation().makeAbsolute().toOSString();
+			
+			if(filepath == null) 
+			{ 
+				return null;
+				//throw new FileNotFoundException();
+			}
+			else
+			{
+				return filepath;
+			}
+		}
+	}
+	
+	// Returns the filename of the currently open file in the editor
+	public String GetOpenFilename()
+	{		
+		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
+		String filename = ifile.getName();
+		
+		if (filename ==  null)
+		{
+			return null;
+			//throw new FileNotFoundException();
+		}
+		else
+		{
+			return filename;
+		}
+	}
+	
+	public IPath GetProjectDirectory()
+	{
+		IPath wksp_dir = GetWorkspaceDirectory();
+
+		int forwardSlashes = 0;
+		
+		for(int i = 0; i < wksp_dir.toOSString().length(); i++) 
+		{
+		    if(wksp_dir.toOSString().charAt(i) == '/')
+		    {
+		    	forwardSlashes++;
+		    }
+		}
+			
+		String filepath = null;
+		
+		filepath = GetFileAbsolutePath();
+		
+		String[] directories = filepath.split("/");
+		
+		String proj_name = directories[forwardSlashes+1];
+		
+		IPath proj_dir = wksp_dir.append("/" + proj_name + "");
+				
+		return proj_dir;
+	}
+	
+	// Returns the workspace directory
+	public IPath GetWorkspaceDirectory()
+	{
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IPath wksp_dir = workspace.getRoot().getLocation();
+		
+		return wksp_dir;
 	}
 	
 	public void RefreshInstance()
