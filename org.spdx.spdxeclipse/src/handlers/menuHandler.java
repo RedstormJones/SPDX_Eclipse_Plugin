@@ -18,19 +18,20 @@
 package handlers;
 
 import java.io.FileNotFoundException;
+
 import org.eclipse.core.commands.*;
 import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.runtime.*;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.swt.widgets.Display;
 
-import utils.utilities;
+import classes.Utilities;
 
 public class menuHandler extends AbstractHandler {
 	
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{							
-		utilities utils = new utilities();
+		Utilities utils = new Utilities();
 
 		String SPDXDocumentType = null;
 		

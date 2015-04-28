@@ -15,14 +15,14 @@
  *
 */
 
-package utils;
+package classes;
 
 import java.io.*;
 import org.eclipse.core.resources.*;
 import org.eclipse.core.runtime.*;
 import org.eclipse.ui.*;
 
-public class utilities {
+public class Utilities {
 		
 	// Takes a target directory and a filename as parameters and runs the DoSPDX.py 
 	// command on the combined target directory and file. The output of the command is
