@@ -32,7 +32,7 @@ public class menuHandler extends AbstractHandler {
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{							
 		Utilities utils = new Utilities();
-
+		
 		String SPDXDocumentType = null;
 		
 		try 

@@ -213,9 +213,4 @@ public class Utilities {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void SendErrorEmail()
-	{
-		
-	}
 }
