@@ -29,29 +29,29 @@ import utils.utilities;
 public class menuHandler extends AbstractHandler {
 	
 	public Object execute (ExecutionEvent event) throws ExecutionException
-	{
-		String SPDXDocumentType = null;
-		
-		try 
-		{
-			SPDXDocumentType = event.getCommand().getName();
-		} 
-		catch (NotDefinedException e1) 
-		{
-			Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "Error", e1);
-			ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "Error", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
-			dlg.open();
-		}
-		
-		if (SPDXDocumentType != null)
-		{
-			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
-		}
-								
+	{							
 		utilities utils = new utilities();
 
 		if (utils.ValidateFOSSology() && utils.ValidateDoSOCS())
 		{
+			String SPDXDocumentType = null;
+			
+			try 
+			{
+				SPDXDocumentType = event.getCommand().getName();
+			} 
+			catch (NotDefinedException e1) 
+			{
+				Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "Error", e1);
+				ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "Error", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
+				dlg.open();
+			}
+			
+			if (SPDXDocumentType != null)
+			{
+				SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
+			}
+			
 			String filepath = null;
 			String filename = null;
 			
