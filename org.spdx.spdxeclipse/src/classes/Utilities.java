@@ -202,7 +202,12 @@ public class Utilities {
 		return proj_dir;
 	}
 	
-	// Returns the workspace directory
+	/**
+	 * This method uses the IWorkspace method ResourcesPlugin.getWorkspace to obtain the root workspace
+	 * directory for a users eclipse instance.
+	 * <p>
+	 * @return IPath of the Workspace Directory
+	*/
 	public IPath GetWorkspaceDirectory()
 	{
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
@@ -212,7 +217,7 @@ public class Utilities {
 	}
 	
 	/**
-	 * This method refreshes a users workspace manually.
+	 * This method refreshes a users workspace manually using the IWorkspaceRoot.refreshLocal method.
 	*/
 	public void RefreshInstance()
 	{
