@@ -65,16 +65,17 @@ public class menuHandler extends AbstractHandler {
 		String directory = utils.CreateSPDXDirectory();
 		
 		// Create a .tar file from the source file to be scanned
-		utils.CreateTarball(directory, filename, filepath);		
-		
-		// Create the .spdx document from the .tar file and store
-		// in the SPDX/ directory. Remove the .tar file will as well.
-		if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
+		if (utils.CreateTarball(directory, filename, filepath))
 		{
-			// refresh the Eclipse for the SPDX folder and/or 
-			utils.RefreshInstance();
+			// Create the .spdx document from the .tar file and store
+			// in the SPDX/ directory. Remove the .tar file will as well.
+			if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
+			{
+				// refresh the Eclipse for the SPDX folder and/or 
+				utils.RefreshInstance();
+			}
 		}
-			
+		
 		return null;
 	}
 }

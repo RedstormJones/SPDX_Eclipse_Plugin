@@ -47,6 +47,7 @@ public class Utilities {
 			if ((DoSPDXLoc = bufferedReader.readLine()) != null)
 			{
 				File spdxFile = new File(target_spdxfile);
+				
 				if(!spdxFile.exists())
 				{
 					spdxFile.createNewFile();
@@ -80,8 +81,11 @@ public class Utilities {
 			bufferedReader.close();
         }
 		catch (Exception e)
-		{
-			e.printStackTrace();
+		{			
+			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+			
+			exceptionUtils.Error(e);
+			
 			return false;
 		}
 		
@@ -106,7 +110,7 @@ public class Utilities {
 	
 	// This method executes library functions for creating .tar
 	// file of the file specified in the filepath parameter.
-	public void CreateTarball(String target_directory, String tar_file_name, String file_directory)
+	public Boolean CreateTarball(String target_directory, String tar_file_name, String file_directory)
 	{
 		try 
 		{
@@ -117,7 +121,11 @@ public class Utilities {
 			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
 			
 			exceptionUtils.Error("An error occured while creating the tarball for the currently open file.  Please try your request again.", e);
+		
+			return false;
 		}
+		
+		return true;
 	}
 	
 	// Returns the absolute directory path of the currently open file in the editor
@@ -203,6 +211,9 @@ public class Utilities {
 		return wksp_dir;
 	}
 	
+	/**
+	 * This method refreshes a users workspace manually.
+	*/
 	public void RefreshInstance()
 	{
 		IWorkspaceRoot workspaceroot = ResourcesPlugin.getWorkspace().getRoot();
@@ -211,9 +222,11 @@ public class Utilities {
 		{
 			workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
 		} 
-		catch (CoreException e) 
+		catch (Exception e) 
 		{
-			e.printStackTrace();
+			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+			
+			exceptionUtils.Error("An error occured while refreshing your workspace.  Please manually refresh your workspace using the right clickable menu.", e);
 		}
 	}
 }
