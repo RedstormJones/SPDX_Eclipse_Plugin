@@ -26,6 +26,9 @@ import org.eclipse.swt.widgets.Shell;
 
 public class ExceptionUtilities 
 {	
+	/**
+	 *  Generic function which creates an error popup with a generic title and message.
+	*/
 	public void Error()
 	{
 		Display display = Display.getDefault();
@@ -34,6 +37,10 @@ public class ExceptionUtilities
 		MessageDialog.openError(shell, "ERROR", "There was an error while generating your SPDX Document.  Please try your request again.");
 	}
 	
+	/**
+	 *  Generic function which creates an error popup with a generic title and a custom error message passed to 
+	 *  the method.
+	*/
 	public void Error(String message)
 	{
 		Display display = Display.getDefault();
@@ -42,6 +49,10 @@ public class ExceptionUtilities
 		MessageDialog.openError(shell, "ERROR", message);
 	}
 	
+	/**
+	 *  Generic function which creates an error popup with a generic title and error message while displaying a custom
+	 *  exception which is passed to the method.
+	*/
 	public void Error(Throwable e)
 	{
 		Display display = Display.getDefault();
@@ -53,6 +64,10 @@ public class ExceptionUtilities
 		dlg.open();
 	}
 	
+	/**
+	 *  Generic function which creates an error popup with a generic title and custom error message and exception 
+	 *  which are passed as parameters to this method.
+	*/
 	public void Error(String message, Throwable e)
 	{
 		Display display = Display.getDefault();
