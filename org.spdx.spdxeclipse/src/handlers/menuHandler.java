@@ -56,9 +56,16 @@ public class menuHandler extends AbstractHandler {
 		}
 		
 		String filepath = null;
-		String filename = null;
 		
 		filepath = utils.GetFileAbsolutePath();
+		
+		if (filepath == null)
+		{
+			exceptionUtils.Error("An error occured while finding the directory of the currently open file.  Please try your request again.");
+		}
+		
+		String filename = null;
+		
 		filename = utils.GetOpenFilename();
 		
 		// Create the SPDX/ directory within the project

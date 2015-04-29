@@ -119,7 +119,7 @@ public class Utilities {
 	
 	// Returns the absolute directory path of the currently open file in the editor
 	public String GetFileAbsolutePath()
-	{
+	{		
 		String filepath = null;
 		
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
@@ -127,22 +127,13 @@ public class Utilities {
 		
 		if(ifile == null) 
 		{ 
-			return null;
-			//throw new FileNotFoundException();
+			return filepath;
 		}
 		else
 		{
 			filepath = ifile.getRawLocation().makeAbsolute().toOSString();
 			
-			if(filepath == null) 
-			{ 
-				return null;
-				//throw new FileNotFoundException();
-			}
-			else
-			{
-				return filepath;
-			}
+			return filepath;
 		}
 	}
 	
