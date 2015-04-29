@@ -43,12 +43,16 @@ public class menuHandler extends AbstractHandler {
 		} 
 		catch (NotDefinedException e1) 
 		{
-			
+			exceptionUtils.Error(e1);
 		}
 		
 		if (SPDXDocumentType != null)
 		{
 			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
+		}
+		else
+		{
+			exceptionUtils.Error();
 		}
 		
 		String filepath = null;
