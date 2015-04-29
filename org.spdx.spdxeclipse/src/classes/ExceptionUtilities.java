@@ -79,6 +79,9 @@ public class ExceptionUtilities
 		dlg.open();
 	}
 	
+	/**
+	 *  Generic function which creates an warning popup with a generic title and message.
+	*/
 	public void Warning()
 	{
 		Display display = Display.getDefault();
@@ -87,6 +90,10 @@ public class ExceptionUtilities
 		MessageDialog.openWarning(shell, "WARNING", "There was a warning while generating your SPDX Document.  Please try your request again.");
 	}
 	
+	/**
+	 *  Generic function which creates an warning popup with a generic title and a custom error message passed to 
+	 *  the method.
+	*/
 	public void Warning(String message)
 	{
 		Display display = Display.getDefault();
