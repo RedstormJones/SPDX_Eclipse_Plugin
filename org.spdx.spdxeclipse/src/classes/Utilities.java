@@ -125,34 +125,25 @@ public class Utilities {
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
 		
-		if(ifile == null) 
-		{ 
-			return filepath;
-		}
-		else
+		if(ifile != null) 
 		{
 			filepath = ifile.getRawLocation().makeAbsolute().toOSString();
-			
-			return filepath;
 		}
+		
+		return filepath;
 	}
 	
 	// Returns the filename of the currently open file in the editor
 	public String GetOpenFilename()
 	{		
+		String filename = null;
+
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
-		String filename = ifile.getName();
 		
-		if (filename ==  null)
-		{
-			return null;
-			//throw new FileNotFoundException();
-		}
-		else
-		{
-			return filename;
-		}
+		filename = ifile.getName();
+		
+		return filename;
 	}
 	
 	public IPath GetProjectDirectory()
