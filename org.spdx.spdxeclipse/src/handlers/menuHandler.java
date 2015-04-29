@@ -39,6 +39,7 @@ public class menuHandler extends AbstractHandler {
 		catch (Exception e1) 
 		{   
 			exceptionUtils.Error(e1);
+			System.exit(0);
 		}
 		
 		// If a commandId was successfully passed to the execute function...
@@ -51,6 +52,7 @@ public class menuHandler extends AbstractHandler {
 		else
 		{   
 	        exceptionUtils.Error();
+			System.exit(0);
 		}
 			
 		String filepath = null;
@@ -67,6 +69,7 @@ public class menuHandler extends AbstractHandler {
 		catch (Exception e2) 
 		{
 			exceptionUtils.Warning("To generate an SPDX document please open a file and try your request again.");
+			System.exit(0);
 		}	
 				
 		// Create or find the /SPDX directory relative to the project of the currently open file.
