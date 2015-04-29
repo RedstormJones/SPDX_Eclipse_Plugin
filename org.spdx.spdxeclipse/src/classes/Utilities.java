@@ -210,9 +210,9 @@ public class Utilities {
 	*/
 	public IPath GetWorkspaceDirectory()
 	{
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		IPath wksp_dir = workspace.getRoot().getLocation();
-		
+		// Get the current workspace directory.
+		IPath wksp_dir = ResourcesPlugin.getWorkspace().getRoot().getLocation();
+				
 		return wksp_dir;
 	}
 	
@@ -221,6 +221,7 @@ public class Utilities {
 	*/
 	public void RefreshInstance()
 	{
+		// Get the 
 		IWorkspaceRoot workspaceroot = ResourcesPlugin.getWorkspace().getRoot();
 		
 		try 
