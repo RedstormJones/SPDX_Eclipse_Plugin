@@ -92,29 +92,62 @@ public class Utilities {
 		return true;
 	}
 	
+	/**
+	 * Using the GetProjectDirectory() method, this method creates a new SPDX directory if it doesn't current exist at
+	 * the following location: { Project Directory/SPDX }.
+	 * <p>
+	 * @return String of the new or existing SPDX Directory
+	*/
 	public String CreateSPDXDirectory() 
 	{
+		// Get the directory of the current project.
 		IPath proj_dir = GetProjectDirectory();
 		
-		String tar_fp = proj_dir.append("/SPDX").toOSString();
+		// Append /SPDX to the project directory.
+		String spdx_fp = proj_dir.append("/SPDX").toOSString();
 		
-		File file = new File(tar_fp);
-				
+		// Create file for the new directory.
+		File file = new File(spdx_fp);
+			
+		// If the SPDX directory doesn't exist...
 		if (!file.exists())
 		{			
+			// Create it.
 			file.mkdirs();
 		}
 		
-		return tar_fp;
+		return spdx_fp;
 	}
 	
-	// This method executes library functions for creating .tar
-	// file of the file specified in the filepath parameter.
+	/**
+	 *  Using the Runtime.getRuntime().exec() method to perform command line operations, this method runs the
+	 *  tar command on the users local machine.
+	 * <p>
+	 * @param target_directory : String (directory where the tarball file should be created)
+	 * @param tar_file_name : String (what the tarball file should be named)
+	 * @param file_directory : String (directory of the file to create a tarball from)
+	 * <p>
+	 * @return true or false depending if creation of the tarball failed.
+	*/
 	public Boolean CreateTarball(String target_directory, String tar_file_name, String file_directory)
 	{
 		try 
 		{
-			Runtime.getRuntime().exec("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
+			// Run the tar command.
+			Process creatTar = Runtime.getRuntime().exec("tar -zcPf " + target_directory + "/" + tar_file_name + ".tar " + file_directory);
+		
+			// Read the output from the execution of the command.
+			BufferedReader tarOutput = new BufferedReader(new InputStreamReader(creatTar.getInputStream()));
+			
+			// If an error occured while executing command...
+			if((tarOutput.readLine()) != null)
+			{
+				ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+				
+				exceptionUtils.Error("An error occured while creating the tarball for the currently open file.  Please try your request again.");
+			
+				return false;
+			}
 		} 
 		catch (Exception e) 
 		{
