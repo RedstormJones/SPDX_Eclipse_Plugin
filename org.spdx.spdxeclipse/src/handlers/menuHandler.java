@@ -17,10 +17,7 @@
 
 package handlers;
 
-import java.io.FileNotFoundException;
-
 import org.eclipse.core.commands.*;
-import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.swt.widgets.*;
 
 import classes.*;
@@ -43,7 +40,7 @@ public class menuHandler extends AbstractHandler {
 		} 
 		catch (Exception e1) 
 		{   
-			exceptionUtils.Error(shell, e1);
+			exceptionUtils.Error(e1);
 		}
 		
 		if (SPDXDocumentType != null)
@@ -52,7 +49,7 @@ public class menuHandler extends AbstractHandler {
 		}
 		else
 		{   
-	        exceptionUtils.Error(shell);
+	        exceptionUtils.Error();
 		}
 			
 		String filepath = null;
@@ -65,9 +62,9 @@ public class menuHandler extends AbstractHandler {
 		} 
 		catch (Exception e2) 
 		{
-			exceptionUtils.Warning(shell, "To generate an SPDX document please open a file and try your request again.");
+			exceptionUtils.Warning("To generate an SPDX document please open a file and try your request again.");
 		}	
-		
+				
 		// Create the SPDX/ directory within the project
 		String directory = utils.CreateSPDXDirectory();
 		

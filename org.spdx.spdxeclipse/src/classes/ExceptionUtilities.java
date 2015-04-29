@@ -21,43 +21,62 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
 public class ExceptionUtilities 
 {	
-	public void Error(Shell shell)
+	public void Error()
 	{
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
+		
 		MessageDialog.openError(shell, "ERROR", "There was an error while generating your SPDX Document.  Please try your request again.");
 	}
 	
-	public void Error(Shell shell, String message)
+	public void Error(String message)
 	{
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
+        
 		MessageDialog.openError(shell, "ERROR", message);
 	}
 	
-	public void Error(Shell shell, Throwable e)
+	public void Error(Throwable e)
 	{
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
+		
 		Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "There was an error while generating your SPDX Document.  Please try your request again.", e);
 		ErrorDialog dlg = new ErrorDialog(shell, "ERROR", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
 		
 		dlg.open();
 	}
 	
-	public void Error(Shell shell, String message, Throwable e)
+	public void Error(String message, Throwable e)
 	{
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
+        
 		Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, message, e);
 		ErrorDialog dlg = new ErrorDialog(shell, "ERROR", message, status, IStatus.ERROR);
 		
 		dlg.open();
 	}
 	
-	public void Warning(Shell shell)
+	public void Warning()
 	{
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
+        
 		MessageDialog.openWarning(shell, "WARNING", "There was a warning while generating your SPDX Document.  Please try your request again.");
 	}
 	
-	public void Warning(Shell shell, String message)
+	public void Warning(String message)
 	{
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
+        
 		MessageDialog.openWarning(shell, "WARNING", message);
 	}
 }

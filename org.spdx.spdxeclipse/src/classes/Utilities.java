@@ -23,6 +23,8 @@ import org.eclipse.core.resources.*;
 import org.eclipse.core.runtime.*;
 import org.eclipse.ui.*;
 
+import classes.ExceptionUtilities;
+
 public class Utilities {
 		
 	// Takes a target directory and a filename as parameters and runs the DoSPDX.py 
@@ -112,6 +114,8 @@ public class Utilities {
 		} 
 		catch (Exception e) 
 		{
+			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+			
 			e.printStackTrace();
 		}
 		
