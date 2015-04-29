@@ -148,18 +148,29 @@ public class Utilities {
 		return filepath;
 	}
 	
-	// Returns the filename of the currently open file in the editor
+	/**
+	 *  This method first gets the users current workspace and then grabs the file currently open.  Using the
+	 *  IFile method .getName() we obtain the name of the currently open file.
+	 * <p>
+	 * @return Name of the currently open file in the form of a String.
+	*/
 	public String GetOpenFilename() throws FileNotFoundException
 	{		
 		String filename = null;
 
+		// Grab the users current workspace.
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		
+		// Grab the currently open file if one exists.
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
 		
+		// If a file was open...
 		if (ifile != null)
 		{
+			// Grab the name.
 			filename = ifile.getName();
 		}
+		// If no file was open...
 		else
 		{
 			throw new FileNotFoundException();
@@ -217,7 +228,7 @@ public class Utilities {
 	}
 	
 	/**
-	 * This method uses the IWorkspace method ResourcesPlugin.getWorkspace to obtain the root workspace
+	 * This method uses the IWorkspace method ResourcesPlugin.getWorkspace() to obtain the root workspace
 	 * directory for a users eclipse instance.
 	 * <p>
 	 * @return IPath of the Workspace Directory
@@ -231,7 +242,7 @@ public class Utilities {
 	}
 	
 	/**
-	 * This method refreshes a users workspace manually using the IWorkspaceRoot.refreshLocal method.
+	 * This method refreshes a users workspace manually using the IWorkspaceRoot's refreshLocal() method.
 	*/
 	public void RefreshInstance()
 	{
