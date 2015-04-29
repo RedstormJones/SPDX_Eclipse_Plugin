@@ -27,35 +27,53 @@ import classes.ExceptionUtilities;
 
 public class Utilities {
 		
-	// Takes a target directory and a filename as parameters and runs the DoSPDX.py 
-	// command on the combined target directory and file. The output of the command is
-	// written to a .spdx file that is named the same as the tar file name.
+	/**
+	 *  Using the Runtime.getRuntime().exec() method to perform command line operations, this method runs the
+	 *  DoSPDX.py file via command line on the users local machine, creating an SPDX document for the passed 
+	 *  parameters.  This method also deletes the tarball file for which the SPDX document was created for.
+	 * <p>
+	 * @param target_directory : String (directory where the SPDX document should be created)
+	 * @param tar_file_name : String (name of the tarball)
+	 * @param spdx_document_type : String (type of SPDX document to be produced)
+	 * <p>
+	 * @return true or false depending if creation of the SPDX document failed.
+	*/
 	public Boolean CreateSPDX(String target_directory, String tar_file_name, String spdx_document_type)
 	{ 
 		try
 		{
 			String DoSPDXLoc = null;
 			String dospdxOutput = null;
+			
+			// Create a string directory of where the SPDX document should be placed.
 			String target_spdxfile = target_directory + "/" + tar_file_name + ".spdx";
 			
+			// Create a string directory for the tarball file.
 			tar_file_name += ".tar";
 			
+			// Run the locate DoSPDX.py command to find the location of the DoSPDX.py file on the users local machine.
 			Process findDoSPDX = Runtime.getRuntime().exec("locate DoSPDX.py");
 			
+			// Read the output from the execution of the command.
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(findDoSPDX.getInputStream()));
 			
+			// If the command found the DoSPDX.py file...
 			if ((DoSPDXLoc = bufferedReader.readLine()) != null)
 			{
+				// Create a file object for the .spdx.
 				File spdxFile = new File(target_spdxfile);
 				
+				// If the file doesn't exist...
 				if(!spdxFile.exists())
 				{
+					// Create a new .spdx file.
 					spdxFile.createNewFile();
 				}
 				
-				// Put all the pieces of the DoSPDX command together and run it
+				// Append all proper statements to create the command.
 				String DoSPDXcmd = DoSPDXLoc + " -p " + target_directory + "/" + tar_file_name + " --scan --scanOption fossology --print " + spdx_document_type;
 
+				// Run the command created above to create the .spdx document on the users local machine.
 				Process spdxDocInput = Runtime.getRuntime().exec(DoSPDXcmd);
 				
 				// Create a buffered reader and writer for capturing the output of the process running the DoSPDX
@@ -63,19 +81,29 @@ public class Utilities {
 				BufferedReader spdxOutput = new BufferedReader(new InputStreamReader(spdxDocInput.getInputStream()));
 				BufferedWriter spdxFileWriter = new BufferedWriter(new FileWriter(spdxFile));
 				
+				// For each line of the output append it.
 				while((dospdxOutput = spdxOutput.readLine()) != null)
 				{
 					spdxFileWriter.append(dospdxOutput + "\n");
 				}
 				
 				// Remove the .tar file used by the DoSPDX command to clean up the directory. 
-				// Then close the buffered reader and writer.
 				String rmtarcmd = "rm -f " + target_directory + "/" + tar_file_name;
 				@SuppressWarnings("unused")
+
+				// Execute the following command to remove the tar file.
 				Process RemoveTarFile = Runtime.getRuntime().exec(rmtarcmd);
 				
 				spdxOutput.close();
 				spdxFileWriter.close();
+			}
+			else
+			{
+				ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+				
+				exceptionUtils.Error("An error occured while finding the DoSPDX.py file on your local file system.  Please try your request again.");
+				
+				return false;
 			}
 			
 			bufferedReader.close();
@@ -84,7 +112,7 @@ public class Utilities {
 		{			
 			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
 			
-			exceptionUtils.Error(e);
+			exceptionUtils.Error("An error occured while calling the CreateSPDX method to create an SPDX Document.  Please try your request again.", e);
 			
 			return false;
 		}
