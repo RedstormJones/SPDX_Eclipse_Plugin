@@ -128,16 +128,26 @@ public class Utilities {
 		return true;
 	}
 	
-	// Returns the absolute directory path of the currently open file in the editor
+	/**
+	 *  This method grabs first uses the users current workspace and then grabs the file currently open.  Using
+	 *  the .getRawLocation() IFile method, we obtain the directory of the currently open file.
+	 * <p>
+	 * @return Directory of the currently open file in the form of a String.
+	*/
 	public String GetFileAbsolutePath() throws FileNotFoundException
 	{		
 		String filepath = null;
 		
+		// Grab the users current workspace.
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
+		
+		// Grab the currently open file if one exists.
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);
 		
+		// If a file was open...
 		if(ifile != null) 
 		{
+			// Grab its directory location.
 			filepath = ifile.getRawLocation().makeAbsolute().toOSString();
 		}
 		else
