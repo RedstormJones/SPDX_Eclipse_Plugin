@@ -116,7 +116,7 @@ public class Utilities {
 		{
 			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
 			
-			e.printStackTrace();
+			exceptionUtils.Error("An error occured while creating the tarball for the currently open file.  Please try your request again.", e);
 		}
 		
 		return true;

@@ -18,7 +18,6 @@
 package handlers;
 
 import org.eclipse.core.commands.*;
-import org.eclipse.swt.widgets.*;
 
 import classes.*;
 
@@ -28,9 +27,6 @@ public class menuHandler extends AbstractHandler {
 	{			
 		Utilities utils = new Utilities();
 		ExceptionUtilities exceptionUtils = new ExceptionUtilities();
-		
-		Display display = Display.getDefault();
-        Shell shell = new Shell(display);
 		
 		String SPDXDocumentType = null;
 		
