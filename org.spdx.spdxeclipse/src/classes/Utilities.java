@@ -136,7 +136,7 @@ public class Utilities {
 	// Returns the filename of the currently open file in the editor
 	public String GetOpenFilename()
 	{		
-		String filename = null;
+		String filename = "";
 
 		IWorkbenchPart workbenchpart = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart();
 		IFile ifile = (IFile) workbenchpart.getSite().getPage().getActiveEditor().getEditorInput().getAdapter(IFile.class);

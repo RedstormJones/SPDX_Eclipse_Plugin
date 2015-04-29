@@ -17,23 +17,21 @@
 
 package handlers;
 
-import java.io.FileNotFoundException;
-
 import org.eclipse.core.commands.*;
 import org.eclipse.core.commands.common.NotDefinedException;
-import org.eclipse.core.runtime.*;
-import org.eclipse.jface.dialogs.ErrorDialog;
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.*;
 
-import classes.ExceptionUtilities;
-import classes.Utilities;
+import classes.*;
 
 public class menuHandler extends AbstractHandler {
 	
 	public Object execute (ExecutionEvent event) throws ExecutionException
-	{							
+	{			
 		Utilities utils = new Utilities();
 		ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+		
+		Display display = Display.getDefault();
+        Shell shell = new Shell(display);
 		
 		String SPDXDocumentType = null;
 		
@@ -42,8 +40,8 @@ public class menuHandler extends AbstractHandler {
 			SPDXDocumentType = event.getCommand().getName();
 		} 
 		catch (NotDefinedException e1) 
-		{
-			exceptionUtils.Error(e1);
+		{   
+			exceptionUtils.Error(shell, e1);
 		}
 		
 		if (SPDXDocumentType != null)
@@ -51,8 +49,15 @@ public class menuHandler extends AbstractHandler {
 			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
 		}
 		else
-		{
-			exceptionUtils.Error();
+		{   
+	        exceptionUtils.Error(shell);
+		}
+				
+		String filepath = utils.GetFileAbsolutePath();	
+		
+		if(filepath.equals(null))
+		{			
+			exceptionUtils.Error(shell, "There was an error while generating your SPDX Document.  Please try your request again.");
 		}
 		
 		String filename = null;
@@ -61,19 +66,8 @@ public class menuHandler extends AbstractHandler {
 		
 		if (filename == null)
 		{
-			exceptionUtils.Error("An error occured while getting the name of the currently open file.  Please try your request again.");
-			
-			System.exit(0);
-		}
-		
-		String filepath = null;
-		
-		filepath = utils.GetFileAbsolutePath();
-		
-		if (filepath == null)
-		{
-			exceptionUtils.Error("An error occured while finding the directory of the currently open file.  Please try your request again.");
-		
+			//exceptionUtils.Warning("To generate an SPDX document please open a file and try your request again.");
+						
 			System.exit(0);
 		}
 		
