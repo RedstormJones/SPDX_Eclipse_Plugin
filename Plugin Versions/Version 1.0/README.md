@@ -16,3 +16,5 @@ SPDX Eclipse Plugin
 
 **Installation:**
 <br>
+
+Please download [install.sh](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/dev/Plugin%20Versions/Version%201.0/install.sh) and run it on your local machine.  Once this is complete, restart your eclipse instance.
