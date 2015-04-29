@@ -221,11 +221,12 @@ public class Utilities {
 	*/
 	public void RefreshInstance()
 	{
-		// Get the 
+		// Get the current workspace directory.
 		IWorkspaceRoot workspaceroot = ResourcesPlugin.getWorkspace().getRoot();
 		
 		try 
 		{
+			// Try to refresh the workspace.
 			workspaceroot.refreshLocal(IResource.DEPTH_INFINITE, null);
 		} 
 		catch (Exception e) 
