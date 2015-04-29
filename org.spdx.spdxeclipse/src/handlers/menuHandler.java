@@ -41,7 +41,7 @@ public class menuHandler extends AbstractHandler {
 		{
 			SPDXDocumentType = event.getCommand().getName();
 		} 
-		catch (NotDefinedException e1) 
+		catch (Exception e1) 
 		{   
 			exceptionUtils.Error(shell, e1);
 		}
