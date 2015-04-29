@@ -18,6 +18,14 @@ public class ExceptionUtilities {
 		MessageDialog.openError(Display.getCurrent().getActiveShell(), "ERROR", message);
 	}
 	
+	public void Error(Throwable e)
+	{
+		Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "There was an error while generating your SPDX Document.  Please try your request again.", e);
+		ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "ERROR", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
+		
+		dlg.open();
+	}
+	
 	public void Error(String message, Throwable e)
 	{
 		Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, message, e);

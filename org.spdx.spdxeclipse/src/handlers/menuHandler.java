@@ -25,6 +25,7 @@ import org.eclipse.core.runtime.*;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.swt.widgets.Display;
 
+import classes.ExceptionUtilities;
 import classes.Utilities;
 
 public class menuHandler extends AbstractHandler {
@@ -32,6 +33,7 @@ public class menuHandler extends AbstractHandler {
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{							
 		Utilities utils = new Utilities();
+		ExceptionUtilities exceptionUtils = new ExceptionUtilities();
 		
 		String SPDXDocumentType = null;
 		
@@ -41,9 +43,7 @@ public class menuHandler extends AbstractHandler {
 		} 
 		catch (NotDefinedException e1) 
 		{
-			Status status = new Status(IStatus.ERROR, "org.spdx.spdxeclipse", 0, "Error", e1);
-			ErrorDialog dlg = new ErrorDialog(Display.getCurrent().getActiveShell(), "Error", "There was an error while generating your SPDX Document.  Please try your request again.", status, IStatus.ERROR);
-			dlg.open();
+			
 		}
 		
 		if (SPDXDocumentType != null)
