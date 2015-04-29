@@ -23,6 +23,7 @@ import classes.*;
 
 public class menuHandler extends AbstractHandler {
 	
+	// This execute method handles the clickable actions tied to each menu contribution in the plugin.xml file.
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{			
 		Utilities utils = new Utilities();
@@ -32,6 +33,7 @@ public class menuHandler extends AbstractHandler {
 		
 		try 
 		{
+			// Get the name of the commandId passed to the execute function.
 			SPDXDocumentType = event.getCommand().getName();
 		} 
 		catch (Exception e1) 
@@ -39,8 +41,11 @@ public class menuHandler extends AbstractHandler {
 			exceptionUtils.Error(e1);
 		}
 		
+		// If a commandId was successfully passed to the execute function...
 		if (SPDXDocumentType != null)
 		{
+			// Parse the commandId for the string after the last occurance of a period and store that.  This should
+			// store either JSON, TAG, or RDF as the SPDXDocumentType requested by the user.
 			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
 		}
 		else
@@ -53,7 +58,10 @@ public class menuHandler extends AbstractHandler {
 
 		try 
 		{
+			// Get the name of the currently open file.
 			filename = utils.GetOpenFilename();
+			
+			// Get the directory of the currently open file.
 			filepath = utils.GetFileAbsolutePath();
 		} 
 		catch (Exception e2) 
@@ -61,17 +69,18 @@ public class menuHandler extends AbstractHandler {
 			exceptionUtils.Warning("To generate an SPDX document please open a file and try your request again.");
 		}	
 				
-		// Create the SPDX/ directory within the project
+		// Create or find the /SPDX directory relative to the project of the currently open file.
 		String directory = utils.CreateSPDXDirectory();
 		
-		// Create a .tar file from the source file to be scanned
+		// Create a .tar within the /SPDX directory using the passed source file.
 		if (utils.CreateTarball(directory, filename, filepath))
 		{
-			// Create the .spdx document from the .tar file and store
-			// in the SPDX/ directory. Remove the .tar file will as well.
+			// Create an .spdx document using the users specified document type passing it the directory of 
+			// the .tar file and finally placing it in the /SPDX directory.  Once the .spdx document has been
+			// successfully created, remove the .tar file from the /SPDX directory.
 			if( utils.CreateSPDX(directory, filename, SPDXDocumentType) )
 			{
-				// refresh the Eclipse for the SPDX folder and/or 
+				// Refresh the users workspace to reflect the previous changes.
 				utils.RefreshInstance();
 			}
 		}
