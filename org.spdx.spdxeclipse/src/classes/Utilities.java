@@ -168,12 +168,20 @@ public class Utilities {
 		return filename;
 	}
 	
+	/**
+	 * Using the root workspace directory for a users eclipse instance and the directory for the 
+	 * currently open file, this method parses each location and finds the project directory for the open file.
+	 * <p>
+	 * @return IPath of the Project Directory
+	*/
 	public IPath GetProjectDirectory()
 	{
+		// Get the Workspace Directory.
 		IPath wksp_dir = GetWorkspaceDirectory();
 
 		int forwardSlashes = 0;
 		
+		// Count the number of directories for Workspace Directory.
 		for(int i = 0; i < wksp_dir.toOSString().length(); i++) 
 		{
 		    if(wksp_dir.toOSString().charAt(i) == '/')
@@ -186,19 +194,25 @@ public class Utilities {
 		
 		try 
 		{
+			// Get the location of the currently open file.
 			filepath = GetFileAbsolutePath();
 		} 
-		catch (FileNotFoundException e) 
+		catch (Exception e) 
 		{
-			e.printStackTrace();
+			ExceptionUtilities exceptionUtils = new ExceptionUtilities();
+			
+			exceptionUtils.Error("An error occured while getting the absolute path of the currently open file.  Please try your request again.", e);
 		}
 		
+		// Parse the directories.
 		String[] directories = filepath.split("/");
 		
+		// Get the project name.
 		String proj_name = directories[forwardSlashes+1];
 		
+		// Append the project directory to the workspace directory.
 		IPath proj_dir = wksp_dir.append("/" + proj_name + "");
-				
+			
 		return proj_dir;
 	}
 	
