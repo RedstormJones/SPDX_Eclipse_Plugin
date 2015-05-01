@@ -18,7 +18,6 @@
 package handlers;
 
 import org.eclipse.core.commands.*;
-
 import classes.*;
 
 public class menuHandler extends AbstractHandler {
@@ -46,8 +45,8 @@ public class menuHandler extends AbstractHandler {
 		// If a commandId was successfully passed to the execute function...
 		if (SPDXDocumentType != null)
 		{
-			// Parse the commandId for the string after the last occurance of a period and store that.  This should
-			// store either JSON, TAG, or RDF as the SPDXDocumentType requested by the user.
+			// Parse the commandId for the string after the last occurrence of a period and store that.
+			// This should store either JSON, TAG, or RDF as the SPDXDocumentType requested by the user.
 			SPDXDocumentType = SPDXDocumentType.substring(SPDXDocumentType.lastIndexOf('.') + 1).trim().toUpperCase();
 		}
 		else
