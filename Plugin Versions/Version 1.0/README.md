@@ -12,7 +12,7 @@ SPDX Eclipse Plugin
   -  [Localized License File](https://github.com/TCF-30/SPDX_Eclipse_Plugin/blob/dev/SourceLicense)
 <br>
 
-**Copyright:** Copyright © 2015 University of Nebraska at Omaha
+**Copyright:** Copyright © 2015 [Ryan Beasley](https://github.com/ryanbeaz), [Tyler Filkins](https://github.com/TCF-30), University of Nebraska at Omaha
 
 **Installation:**
 <br>
