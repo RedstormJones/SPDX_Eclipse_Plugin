@@ -16,7 +16,7 @@ License
 Copyright
 ---------
 
-Copyright © 2015 University of Nebraska at Omaha
+Copyright © 2015 [Ryan Beasley](https://github.com/ryanbeaz), [Tyler Filkins](https://github.com/TCF-30), University of Nebraska at Omaha
 
 Version
 -------
