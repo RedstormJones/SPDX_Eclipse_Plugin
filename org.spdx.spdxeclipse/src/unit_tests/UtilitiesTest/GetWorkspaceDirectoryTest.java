@@ -8,12 +8,12 @@ import classes.Utilities;
 public class GetWorkspaceDirectoryTest {
 
 	@Test
-	public void WorkspaceDirectoryTest_Pass() 
+	public void ValidWorkspace_Pass() 
 	{
 		Utilities utils = new Utilities();
 		
-		IPath directory = utils.GetWorkspaceDirectory();
+		IPath workspace_directory = utils.GetWorkspaceDirectory();
 		
-		Assert.isNotNull(directory);
+		Assert.isNotNull(workspace_directory);
 	}
 }
