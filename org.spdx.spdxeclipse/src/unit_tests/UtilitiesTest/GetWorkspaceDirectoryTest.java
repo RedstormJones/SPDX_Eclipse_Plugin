@@ -1,14 +1,19 @@
 package unit_tests.UtilitiesTest;
 
-import static org.junit.Assert.*;
-
+import org.eclipse.core.runtime.*;
 import org.junit.Test;
+
+import classes.Utilities;
 
 public class GetWorkspaceDirectoryTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void WorkspaceDirectoryTest_Pass() 
+	{
+		Utilities utils = new Utilities();
+		
+		IPath directory = utils.GetWorkspaceDirectory();
+		
+		Assert.isNotNull(directory);
 	}
-
 }
