@@ -17,9 +17,12 @@
 
 package classes;
 
-import org.eclipse.core.runtime.*;
-import org.eclipse.jface.dialogs.*;
-import org.eclipse.swt.widgets.*;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 
 public class ExceptionUtilities 
 {	
