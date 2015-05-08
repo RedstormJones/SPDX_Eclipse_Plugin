@@ -18,10 +18,11 @@
 package handlers;
 
 import org.eclipse.core.commands.*;
+
 import classes.*;
 
 public class menuHandler extends AbstractHandler {
-	
+		
 	// This execute method handles the clickable actions tied to each menu contribution in the plugin.xml file.
 	public Object execute (ExecutionEvent event) throws ExecutionException
 	{			
@@ -70,7 +71,7 @@ public class menuHandler extends AbstractHandler {
 		catch (Exception e2) 
 		{
 			exceptionUtils.Warning("To generate an SPDX document please open a file and try your request again.");
-
+			
 			return null;
 		}	
 				

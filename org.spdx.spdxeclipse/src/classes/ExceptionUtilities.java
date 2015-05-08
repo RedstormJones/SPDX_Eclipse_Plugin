@@ -22,7 +22,7 @@ import org.eclipse.jface.dialogs.*;
 import org.eclipse.swt.widgets.*;
 
 public class ExceptionUtilities 
-{	
+{		
 	/**
 	 *  Generic function which creates an error popup with a generic title and message.
 	*/
