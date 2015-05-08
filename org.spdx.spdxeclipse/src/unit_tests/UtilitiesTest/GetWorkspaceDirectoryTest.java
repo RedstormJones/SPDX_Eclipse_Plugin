@@ -7,12 +7,19 @@ import classes.Utilities;
 
 public class GetWorkspaceDirectoryTest {
 
+	/**
+	 * Create a valid account.
+	 * @result Account will be persisted without any errors,
+	 *         and Account.getId() will no longer be <code>null</code>
+	 */
 	@Test
 	public void ValidWorkspace_Pass() 
 	{
 		Utilities utils = new Utilities();
+
+		IPath workspace_directory = null;
 		
-		IPath workspace_directory = utils.GetWorkspaceDirectory();
+		workspace_directory = utils.GetWorkspaceDirectory();
 		
 		Assert.isNotNull(workspace_directory);
 	}
