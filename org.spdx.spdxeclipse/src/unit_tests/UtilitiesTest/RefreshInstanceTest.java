@@ -19,12 +19,15 @@ package unit_tests.UtilitiesTest;
 
 import org.junit.Test;
 
+import classes.Utilities;
+
 public class RefreshInstanceTest 
 {
-
 	@Test
-	public void test() 
+	public void ValidRefresh_Pass() 
 	{
-	
+		Utilities utils = new Utilities();
+		
+		 utils.RefreshInstance();
 	}
 }
