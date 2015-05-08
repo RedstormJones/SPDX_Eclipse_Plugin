@@ -1,7 +1,7 @@
 SPDX Eclipse Plugin
 ---
 
-**Version:** 1.0 
+**Version:** 1.0.0.0
 <br>
 **Release Date:** April 28th, 2015
 <br>
