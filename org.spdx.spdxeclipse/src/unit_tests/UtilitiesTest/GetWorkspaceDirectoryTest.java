@@ -22,13 +22,8 @@ import org.junit.Test;
 
 import classes.Utilities;
 
-public class GetWorkspaceDirectoryTest {
-
-	/**
-	 * Create a valid account.
-	 * @result Account will be persisted without any errors,
-	 *         and Account.getId() will no longer be <code>null</code>
-	 */
+public class GetWorkspaceDirectoryTest 
+{
 	@Test
 	public void ValidWorkspace_Pass() 
 	{

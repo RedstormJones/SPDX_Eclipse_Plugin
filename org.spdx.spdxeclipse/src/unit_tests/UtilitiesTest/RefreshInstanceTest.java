@@ -17,10 +17,7 @@
 
 package unit_tests.UtilitiesTest;
 
-import org.eclipse.core.runtime.*;
 import org.junit.Test;
-
-import classes.Utilities;
 
 public class RefreshInstanceTest 
 {
