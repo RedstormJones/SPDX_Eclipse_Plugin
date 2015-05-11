@@ -21,7 +21,7 @@ Copyright © 2015 [Ryan Beasley](https://github.com/ryanbeaz), [Tyler Filkins](h
 Version
 -------
 
-The SPDX Eclipse Plugin is currently [pre-alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle).  Version 1.0 is expected to be released April 17th, 2015.  Information regarding the features to be included in version 1.0 will be released soon.
+Version 1.0 of the SPDX Eclipse Plugin was released as of April 28th, 2015.  Please see the Installation section below for installation instructions.
 
 Installation
 -------------
